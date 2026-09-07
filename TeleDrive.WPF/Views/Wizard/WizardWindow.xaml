@@ -1,0 +1,67 @@
+<Window x:Class="TeleDrive.WPF.Views.Wizard.WizardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:TeleDrive.WPF.ViewModels.Wizard"
+        xmlns:pages="clr-namespace:TeleDrive.WPF.Views.Wizard.Pages"
+        Title="TeleDrive Setup"
+        Width="640" Height="480"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BackgroundBrush}">
+
+    <Window.DataContext>
+        <vm:WizardViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:WelcomePageViewModel}">
+            <pages:WelcomePage />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ChooseModePageViewModel}">
+            <pages:ChooseModePage />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:BotApiSetupPageViewModel}">
+            <pages:BotApiSetupPage />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MtProtoSetupPageViewModel}">
+            <pages:MtProtoSetupPage />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StoragePageViewModel}">
+            <pages:StoragePage />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:DonePageViewModel}">
+            <pages:DonePage />
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ItemsControl Grid.Row="0" Margin="24,20,24,0" HorizontalAlignment="Center">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <Ellipse Width="10" Height="10" Margin="4" Fill="{DynamicResource AccentBrush}" />
+            <Ellipse Width="10" Height="10" Margin="4" Fill="{DynamicResource AccentBrush}" />
+            <Ellipse Width="10" Height="10" Margin="4" Fill="{DynamicResource AccentBrush}" />
+            <Ellipse Width="10" Height="10" Margin="4" Fill="{DynamicResource AccentBrush}" />
+            <Ellipse Width="10" Height="10" Margin="4" Fill="{DynamicResource AccentBrush}" />
+        </ItemsControl>
+
+        <ContentControl Grid.Row="1" Margin="32,16" Content="{Binding CurrentPageViewModel}" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="24">
+            <Button Content="Back" Width="90" Margin="0,0,8,0"
+                    Command="{Binding BackCommand}"
+                    Visibility="{Binding CanGoBack, Converter={StaticResource BoolToVisibilityConverter}}" />
+            <Button Content="Next" Width="90" Command="{Binding NextCommand}" />
+        </StackPanel>
+    </Grid>
+</Window>
