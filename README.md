@@ -106,7 +106,7 @@ TeleDrive/
 
 ## Roadmap
 
-### Phase 1 — Foundation (Core library skeleton)
+### Phase 1 — Foundation (Core library skeleton) ✅ Completed
 Set up the solution, project files, and all interfaces, models, and empty service stubs. No Telegram calls yet — just the contracts everything else will implement.
 
 **Deliverables:**
@@ -120,7 +120,7 @@ Set up the solution, project files, and all interfaces, models, and empty servic
 
 ---
 
-### Phase 2 — Core Services (Business logic)
+### Phase 2 — Core Services (Business logic) ✅ Completed (unverified — not yet compiled)
 Implement all three services fully. This is the engine of the app — no UI yet.
 
 **Deliverables:**
@@ -132,7 +132,7 @@ Implement all three services fully. This is the engine of the app — no UI yet.
 
 ---
 
-### Phase 3 — Setup Wizard (WPF)
+### Phase 3 — Setup Wizard (WPF) ✅ Completed (unverified — not yet compiled)
 Build the first-run experience. This is the user's first impression and must be flawless.
 
 **Deliverables:**
@@ -142,8 +142,11 @@ Build the first-run experience. This is the user's first impression and must be 
 - `BotApiSetupPage` — inline 3-step guide with illustrated panels, token input, live validation (calls `ITelegramService.TestConnectionAsync`)
 - `MtProtoSetupPage` — step-by-step guide (Open browser → api_id + api_hash inputs → phone number → OTP 5-box input → optional 2FA password)
 - `StoragePage` — default: auto-create channel; secondary: paste existing channel ID/link; shows live status as channel is created
+  - ⚠️ Auto-create only works in MTProto mode. Bot API cannot programmatically create Telegram channels — Bot API users must pre-create a channel and add the bot as admin.
 - `DonePage` — success animation, summary, Open TeleDrive button
 - All pages wired to ViewModels with full validation and error display
+
+See [`Project_plans.md`](./Project_plans.md) for the full list of known gaps and unverified areas.
 
 ---
 
