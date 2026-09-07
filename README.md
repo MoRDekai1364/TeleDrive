@@ -258,6 +258,12 @@ Add `TeleDrive.iOS` sharing the same Core and most MAUI views from Phase 7.
 
 ---
 
+## Project Plans
+
+See [`Project_plans.md`](./Project_plans.md) for a status/priority tracker of build progress, known gaps, and pending fixes across phases.
+
+---
+
 ## License
 
 MIT

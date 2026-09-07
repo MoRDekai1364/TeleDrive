@@ -1,0 +1,13 @@
+# TeleDrive_plans
+
+| status | priority | change | content |
+|---|---|---|---|
+| completed | high | new | Phase 1 — Solution skeleton: `TeleDrive.sln`, `TeleDrive.Core.csproj`, `TeleDrive.WPF.csproj`, all interfaces (`ITelegramService`, `IChunkingService`, `IIndexService`), all models (`VaultFile`, `FileChunk`, `TransferItem`, `AppSettings`, `ConnectionMode`), `HashHelper`, `SettingsHelper`, empty service stubs. |
+| completed | high | new | Phase 2 — Core services implemented: `ChunkingService` (streamed split/reassemble + SHA-256 verify), `IndexService` (SQLite local cache + pinned-message JSON index), `TransferOrchestrator` (bounded `Channels` queue, worker pool, pause/resume/cancel, exponential backoff), `BotApiTelegramService`, `MtProtoTelegramService`. |
+| next in line | critical | mod | `ITelegramService` was extended mid-Phase-2 with `EditMessageTextAsync`, `PinMessageAsync`, `GetPinnedMessageAsync` to support the pinned-index-message pattern. Not yet compiled/verified — no dotnet SDK available in the build environment. Verify signatures against actual restored NuGet packages (Telegram.Bot v21.2.0, WTelegramClient v4.1.1) once built locally. |
+| no status | high | new | Phase 3 — Setup Wizard (WPF): `WizardWindow`, `WelcomePage`, `ChooseModePage`, `BotApiSetupPage` (token input + live `TestConnectionAsync` validation), `MtProtoSetupPage` (api_id/api_hash/phone/OTP/2FA flow driving `MtProtoTelegramService`'s configFunc callback), `StoragePage` (auto-create or paste existing channel), `DonePage`. |
+| no status | medium | new | Phase 4 — Main UI: `MainWindow` shell, `FilesPage` (virtualized grid/list bound to `IIndexService`), `TransfersPage` (live cards bound to `TransferOrchestrator` via `IProgress<TransferItem>`), drag-and-drop upload from Explorer. |
+| no status | medium | new | Phase 5 — Themes + Settings: `Dark.xaml` / `Light.xaml`, `ThemeManager` (Windows registry theme detection + runtime switch), `SettingsPage`, settings persisted via `SettingsHelper` to `%AppData%\TeleDrive\settings.json`. |
+| no status | low | new | Phase 6 — Resilience + Polish: configurable retry/backoff tuning, resume-on-launch for `InProgress` transfers, tray icon, shell icon extraction, right-click context menu, keyboard shortcuts, crash log to `%AppData%\TeleDrive\logs\`. |
+| no status | low | new | Phase 7 — Android port (MAUI), Phase 8 — iOS port (MAUI). Both deferred until `TeleDrive.Core` is fully stable and Windows app is feature-complete. |
+| no status | critical | bug | Nothing built has been compiled or run yet. First priority once dotnet/Visual Studio is available: restore NuGet packages, build `TeleDrive.Core` standalone, fix any Telegram.Bot / WTelegramClient API signature mismatches before touching WPF. |
