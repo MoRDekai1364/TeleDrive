@@ -7,6 +7,7 @@ public partial class MainViewModel : ObservableObject
 {
     public FilesPageViewModel FilesPageViewModel { get; }
     public TransfersPageViewModel TransfersPageViewModel { get; }
+    public SettingsPageViewModel SettingsPageViewModel { get; }
 
     [ObservableProperty]
     private object? _currentPageViewModel;
@@ -18,6 +19,7 @@ public partial class MainViewModel : ObservableObject
     {
         TransfersPageViewModel = new TransfersPageViewModel();
         FilesPageViewModel = new FilesPageViewModel(TransfersPageViewModel);
+        SettingsPageViewModel = new SettingsPageViewModel();
         CurrentPageViewModel = FilesPageViewModel;
     }
 
@@ -33,5 +35,12 @@ public partial class MainViewModel : ObservableObject
     {
         CurrentPageViewModel = TransfersPageViewModel;
         CurrentPageTitle = "Transfers";
+    }
+
+    [RelayCommand]
+    private void ShowSettings()
+    {
+        CurrentPageViewModel = SettingsPageViewModel;
+        CurrentPageTitle = "Settings";
     }
 }

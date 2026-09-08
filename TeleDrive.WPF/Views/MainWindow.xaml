@@ -19,6 +19,9 @@
         <DataTemplate DataType="{x:Type vm:TransfersPageViewModel}">
             <pages:TransfersPage />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SettingsPageViewModel}">
+            <pages:SettingsPage />
+        </DataTemplate>
     </Window.Resources>
 
     <Grid>
@@ -43,6 +46,11 @@
                         Background="Transparent" BorderThickness="0"
                         Foreground="{DynamicResource TextPrimaryBrush}"
                         Command="{Binding ShowTransfersCommand}" />
+
+                <Button Content="Settings" HorizontalContentAlignment="Left" Padding="20,10"
+                        Background="Transparent" BorderThickness="0"
+                        Foreground="{DynamicResource TextPrimaryBrush}"
+                        Command="{Binding ShowSettingsCommand}" />
             </StackPanel>
         </Border>
 

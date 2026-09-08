@@ -23,6 +23,8 @@ public partial class App : Application
         var settingsPath = SettingsHelper.GetDefaultSettingsPath();
         Settings = await SettingsHelper.LoadAsync(settingsPath, default);
 
+        Themes.ThemeManager.Apply(Settings.Theme);
+
         if (Settings.VaultChannelId != 0)
         {
             InitializeServices();

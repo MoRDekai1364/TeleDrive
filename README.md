@@ -85,7 +85,7 @@ TeleDrive/
     │   └── Pages/
     │       ├── FilesPage.xaml           # Explorer-style file browser
     │       ├── TransfersPage.xaml       # Active/completed transfers
-    │       └── SettingsPage.xaml
+    │       └── SettingsPage.xaml        # Theme, transfer limit, cache
     ├── ViewModels/
     │   ├── Wizard/
     │   │   ├── WizardViewModel.cs       # Step navigation, shared wizard state
@@ -97,7 +97,8 @@ TeleDrive/
     │   │   └── DonePageViewModel.cs
     │   ├── MainViewModel.cs
     │   ├── FilesPageViewModel.cs
-    │   └── TransfersPageViewModel.cs
+    │   ├── TransfersPageViewModel.cs
+    │   └── SettingsPageViewModel.cs
     └── Converters/
         └── CommonConverters.xaml
 ```
@@ -150,27 +151,33 @@ See [`Project_plans.md`](./Project_plans.md) for the full list of known gaps and
 
 ---
 
-### Phase 4 — Main UI (WPF shell + file browser)
+### Phase 4 — Main UI (WPF shell + file browser) ✅ Completed (unverified — not yet compiled)
 Build the main application window that users spend all their time in.
 
 **Deliverables:**
-- `MainWindow.xaml` — sidebar (Files, Transfers, Settings), top bar (search, upload button, connection indicator)
-- `FilesPage.xaml` — virtualized grid/list of `VaultFile` items, sort and filter bar, empty state, drag-and-drop upload zone
-- `FilesPageViewModel.cs` — loads index from `IIndexService`, triggers uploads via `TransferOrchestrator`, handles download on double-click
-- `TransfersPage.xaml` — live transfer cards showing file name, progress bar, speed (MB/s), ETA, pause/cancel buttons
-- `TransfersPageViewModel.cs` — bound to `ObservableCollection<TransferItem>`, updated via `IProgress<T>` from orchestrator
+- `MainWindow.xaml` — sidebar (Files, Transfers), content host via `DataTemplate`-switched `ContentControl`
+- `FilesPage.xaml` — virtualized `ListView` of `VaultFile` items, drag-and-drop upload zone from Explorer
+- `FilesPageViewModel.cs` — loads local cache first, refreshes from `IIndexService`, triggers uploads via `TransferOrchestrator`, per-row Download button
+- `TransfersPage.xaml` — live transfer cards showing file name, progress bar, byte counts, status, pause/resume/cancel buttons
+- `TransfersPageViewModel.cs` — bound to `ObservableCollection<TransferItem>`, updated via a shared `IProgress<TransferItem>` from the orchestrator
 - Drag-and-drop from Windows Explorer into the files page triggers upload immediately
+- `App` now opens `MainWindow` directly on startup if setup is already complete, otherwise the wizard — which now opens `MainWindow` on completion instead of just closing
+
+Not yet built: top bar search/connection indicator and the Settings nav entry — those land with Phase 5's `SettingsPage`.
 
 ---
 
-### Phase 5 — Themes + Settings
+### Phase 5 — Themes + Settings ✅ Completed (unverified — not yet compiled)
 Polish the visual layer and expose configuration.
 
 **Deliverables:**
-- `Dark.xaml` and `Light.xaml` ResourceDictionaries with full color and style coverage
-- `ThemeManager.cs` — detects Windows system theme via registry, switches dictionaries at runtime, persists user override
-- `SettingsPage.xaml` — connection mode display, change vault channel, concurrent transfer limit slider, cache size limit, theme selector, clear cache button
+- `Light.xaml` — full color/style coverage mirroring `Dark.xaml`'s keys
+- `ThemeManager.cs` — detects Windows system theme via the `AppsUseLightTheme` registry value, swaps the active `ResourceDictionary` at runtime, applied on startup and whenever the user changes the selector
+- `SettingsPage.xaml` — connection mode + vault channel (read-only), theme selector, concurrent transfer limit slider, rebuild-cache button
+- `SettingsPageViewModel.cs` — persists every change immediately via `SettingsHelper`
 - Settings persisted to `%AppData%\TeleDrive\settings.json`
+
+⚠️ Known gap: the concurrent-transfer-limit slider updates `AppSettings` but not the already-running `TransferOrchestrator` worker pool — it takes effect on next launch only. See [`Project_plans.md`](./Project_plans.md).
 
 ---
 
