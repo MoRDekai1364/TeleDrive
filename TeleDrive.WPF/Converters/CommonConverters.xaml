@@ -5,5 +5,7 @@
     <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
     <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
     <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+    <converters:ByteSizeConverter x:Key="ByteSizeConverter" />
+    <converters:TransferStatusToBrushConverter x:Key="TransferStatusToBrushConverter" />
 
 </ResourceDictionary>

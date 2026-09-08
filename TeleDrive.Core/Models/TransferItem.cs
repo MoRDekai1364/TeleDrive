@@ -29,4 +29,8 @@ public class TransferItem
     public string? ErrorMessage { get; set; }
     public string? LocalPath { get; set; }
     public string? VaultFileId { get; set; }
+
+    public bool IsInProgress => Status == TransferStatus.InProgress;
+    public bool IsPaused => Status == TransferStatus.Paused;
+    public bool IsActive => Status is TransferStatus.InProgress or TransferStatus.Paused or TransferStatus.Queued;
 }

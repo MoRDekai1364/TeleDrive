@@ -32,6 +32,7 @@ public partial class WizardWindow : Window
         await App.SaveSettingsAsync();
         App.InitializeServices();
 
+        App.ShowMainWindow();
         Close();
     }
 }
