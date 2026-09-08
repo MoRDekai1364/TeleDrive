@@ -19,6 +19,12 @@ public partial class SettingsPageViewModel : ObservableObject
     private int _concurrentTransferLimit;
 
     [ObservableProperty]
+    private int _maxRetryAttempts;
+
+    [ObservableProperty]
+    private int _retryBackoffBaseMilliseconds;
+
+    [ObservableProperty]
     private long _cacheSizeLimitBytes;
 
     [ObservableProperty]
@@ -28,6 +34,8 @@ public partial class SettingsPageViewModel : ObservableObject
     {
         _selectedTheme = App.Settings.Theme;
         _concurrentTransferLimit = App.Settings.ConcurrentTransferLimit;
+        _maxRetryAttempts = App.Settings.MaxRetryAttempts;
+        _retryBackoffBaseMilliseconds = App.Settings.RetryBackoffBaseMilliseconds;
         _cacheSizeLimitBytes = App.Settings.CacheSizeLimitBytes;
     }
 
@@ -39,6 +47,19 @@ public partial class SettingsPageViewModel : ObservableObject
 
     partial void OnConcurrentTransferLimitChanged(int value)
     {
+        App.Orchestrator?.SetWorkerCount(value);
+        _ = SaveAsync();
+    }
+
+    partial void OnMaxRetryAttemptsChanged(int value)
+    {
+        App.Orchestrator?.SetRetryPolicy(value, RetryBackoffBaseMilliseconds);
+        _ = SaveAsync();
+    }
+
+    partial void OnRetryBackoffBaseMillisecondsChanged(int value)
+    {
+        App.Orchestrator?.SetRetryPolicy(MaxRetryAttempts, value);
         _ = SaveAsync();
     }
 
@@ -59,6 +80,8 @@ public partial class SettingsPageViewModel : ObservableObject
     {
         App.Settings.Theme = SelectedTheme;
         App.Settings.ConcurrentTransferLimit = ConcurrentTransferLimit;
+        App.Settings.MaxRetryAttempts = MaxRetryAttempts;
+        App.Settings.RetryBackoffBaseMilliseconds = RetryBackoffBaseMilliseconds;
         App.Settings.CacheSizeLimitBytes = CacheSizeLimitBytes;
         await App.SaveSettingsAsync();
     }

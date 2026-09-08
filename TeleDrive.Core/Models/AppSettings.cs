@@ -16,6 +16,8 @@ public class AppSettings
     public string? PhoneNumber { get; set; }
     public long VaultChannelId { get; set; }
     public int ConcurrentTransferLimit { get; set; } = 3;
+    public int MaxRetryAttempts { get; set; } = 5;
+    public int RetryBackoffBaseMilliseconds { get; set; } = 500;
     public long CacheSizeLimitBytes { get; set; }
     public AppTheme Theme { get; set; } = AppTheme.System;
     public string LocalCachePath { get; set; } = string.Empty;

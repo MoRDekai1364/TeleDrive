@@ -27,6 +27,16 @@
                       VirtualizingPanel.IsVirtualizing="True"
                       VirtualizingPanel.VirtualizationMode="Recycling"
                       ScrollViewer.CanContentScroll="True">
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Download"
+                                  Command="{Binding PlacementTarget.DataContext.DownloadCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                  CommandParameter="{Binding PlacementTarget.SelectedItem, RelativeSource={RelativeSource AncestorType=ContextMenu}}" />
+                        <MenuItem Header="Copy Name"
+                                  Command="{Binding PlacementTarget.DataContext.CopyNameCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                  CommandParameter="{Binding PlacementTarget.SelectedItem, RelativeSource={RelativeSource AncestorType=ContextMenu}}" />
+                    </ContextMenu>
+                </ListView.ContextMenu>
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" Width="360" DisplayMemberBinding="{Binding Name}" />

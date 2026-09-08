@@ -1,4 +1,6 @@
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using TeleDrive.Core.Helpers;
 using TeleDrive.Core.Interfaces;
 using TeleDrive.Core.Models;
@@ -15,10 +17,16 @@ public partial class App : Application
     public static IChunkingService ChunkingService { get; } = new ChunkingService();
     public static IIndexService? IndexService { get; set; }
     public static TransferOrchestrator? Orchestrator { get; set; }
+    public static TrayIconManager? TrayIcon { get; set; }
 
     protected override async void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
+
+        CrashLogger.PruneOldLogs(keepCount: 20);
+        DispatcherUnhandledException += OnDispatcherUnhandledException;
+        AppDomain.CurrentDomain.UnhandledException += OnDomainUnhandledException;
+        TaskScheduler.UnobservedTaskException += OnUnobservedTaskException;
 
         var settingsPath = SettingsHelper.GetDefaultSettingsPath();
         Settings = await SettingsHelper.LoadAsync(settingsPath, default);
@@ -29,6 +37,11 @@ public partial class App : Application
         {
             InitializeServices();
             ShowMainWindow();
+
+            if (Orchestrator is not null)
+            {
+                _ = Orchestrator.RequeuePersistedTransfersAsync(null, default);
+            }
         }
         else
         {
@@ -37,11 +50,39 @@ public partial class App : Application
         }
     }
 
+    private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+    {
+        var path = CrashLogger.LogException(e.Exception, "DispatcherUnhandledException");
+        MessageBox.Show(
+            $"An unexpected error occurred and was logged to:\n{path}",
+            "TeleDrive",
+            MessageBoxButton.OK,
+            MessageBoxImage.Error);
+        e.Handled = true;
+    }
+
+    private void OnDomainUnhandledException(object sender, UnhandledExceptionEventArgs e)
+    {
+        if (e.ExceptionObject is Exception exception)
+        {
+            CrashLogger.LogException(exception, "AppDomainUnhandledException");
+        }
+    }
+
+    private void OnUnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs e)
+    {
+        CrashLogger.LogException(e.Exception, "UnobservedTaskException");
+        e.SetObserved();
+    }
+
     public static void ShowMainWindow()
     {
         var mainWindow = new MainWindow();
         Current.MainWindow = mainWindow;
         mainWindow.Show();
+
+        TrayIcon?.Dispose();
+        TrayIcon = new TrayIconManager(mainWindow);
     }
 
     public static void InitializeServices()
@@ -70,7 +111,9 @@ public partial class App : Application
                 Settings.VaultChannelId,
                 chunkSize,
                 workingDirectory,
-                Settings.ConcurrentTransferLimit);
+                Settings.ConcurrentTransferLimit,
+                Settings.MaxRetryAttempts,
+                Settings.RetryBackoffBaseMilliseconds);
         }
     }
 

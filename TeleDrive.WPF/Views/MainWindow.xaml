@@ -12,6 +12,15 @@
         <vm:MainViewModel />
     </Window.DataContext>
 
+    <Window.InputBindings>
+        <KeyBinding Key="U" Modifiers="Control" Command="{Binding FilesPageViewModel.UploadFilesCommand}" />
+        <KeyBinding Key="F5" Command="{Binding FilesPageViewModel.LoadCommand}" />
+        <KeyBinding Key="R" Modifiers="Control" Command="{Binding FilesPageViewModel.LoadCommand}" />
+        <KeyBinding Key="D1" Modifiers="Control" Command="{Binding ShowFilesCommand}" />
+        <KeyBinding Key="D2" Modifiers="Control" Command="{Binding ShowTransfersCommand}" />
+        <KeyBinding Key="D3" Modifiers="Control" Command="{Binding ShowSettingsCommand}" />
+    </Window.InputBindings>
+
     <Window.Resources>
         <DataTemplate DataType="{x:Type vm:FilesPageViewModel}">
             <pages:FilesPage />

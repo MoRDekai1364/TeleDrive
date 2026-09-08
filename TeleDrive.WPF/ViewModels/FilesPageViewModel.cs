@@ -102,6 +102,18 @@ public partial class FilesPageViewModel : ObservableObject
         _transfers.StartDownload(file, destinationPath);
     }
 
+    [RelayCommand]
+    private void CopyName(VaultFile? file)
+    {
+        file ??= SelectedFile;
+        if (file is null)
+        {
+            return;
+        }
+
+        System.Windows.Clipboard.SetText(file.Name);
+    }
+
     private void ReplaceFiles(List<VaultFile> files)
     {
         Files.Clear();

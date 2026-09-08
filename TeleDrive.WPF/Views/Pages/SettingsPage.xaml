@@ -28,6 +28,24 @@
                     Value="{Binding ConcurrentTransferLimit}" Width="220" HorizontalAlignment="Left" />
         </DockPanel>
 
+        <TextBlock Text="Retry attempts" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,6" />
+        <DockPanel Margin="0,0,0,20">
+            <TextBlock DockPanel.Dock="Right" Text="{Binding MaxRetryAttempts}"
+                       Foreground="{DynamicResource TextSecondaryBrush}" Margin="12,0,0,0" />
+            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"
+                    Value="{Binding MaxRetryAttempts}" Width="220" HorizontalAlignment="Left" />
+        </DockPanel>
+
+        <TextBlock Text="Retry backoff base (ms)" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,6" />
+        <DockPanel Margin="0,0,0,20">
+            <TextBlock DockPanel.Dock="Right" Text="{Binding RetryBackoffBaseMilliseconds}"
+                       Foreground="{DynamicResource TextSecondaryBrush}" Margin="12,0,0,0" />
+            <Slider Minimum="100" Maximum="5000" TickFrequency="100" IsSnapToTickEnabled="True"
+                    Value="{Binding RetryBackoffBaseMilliseconds}" Width="220" HorizontalAlignment="Left" />
+        </DockPanel>
+
         <TextBlock Text="Local cache" FontWeight="SemiBold"
                    Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,6" />
         <Button Content="Rebuild Cache" Width="140" HorizontalAlignment="Left"
