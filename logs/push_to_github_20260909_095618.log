@@ -1,0 +1,185 @@
+2026-09-09 09:56:18,904 [INFO] Source folder: D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main
+2026-09-09 09:56:18,905 [INFO] Temp log: C:\Users\MORDEK~1\AppData\Local\Temp\push_to_github_20260909_095618.log
+2026-09-09 09:56:18,905 [DEBUG] Running: git --version
+2026-09-09 09:56:18,995 [DEBUG] stdout: git version 2.55.0.windows.2
+2026-09-09 09:56:18,995 [DEBUG] stderr: 
+2026-09-09 09:56:18,996 [INFO] Existing git repository detected.
+2026-09-09 09:56:18,996 [DEBUG] Running: git remote -v
+2026-09-09 09:56:19,094 [DEBUG] stdout: origin	https://github.com/MoRDekai1364/TeleDrive.git (fetch)
+origin	https://github.com/MoRDekai1364/TeleDrive.git (push)
+2026-09-09 09:56:19,094 [DEBUG] stderr: 
+2026-09-09 09:56:19,095 [INFO] Detected remotes:
+2026-09-09 09:56:19,095 [INFO]   1. origin -> https://github.com/MoRDekai1364/TeleDrive.git
+2026-09-09 09:56:19,095 [INFO]   2. Enter a new repository URL
+2026-09-09 09:56:20,508 [INFO] Verifying repository access.
+2026-09-09 09:56:20,508 [DEBUG] Running: git ls-remote https://github.com/MoRDekai1364/TeleDrive.git
+2026-09-09 09:56:21,468 [DEBUG] stdout: 61726c9335e3cb3325886fc7ec21a293ec3cc79e	HEAD
+61726c9335e3cb3325886fc7ec21a293ec3cc79e	refs/heads/main
+2026-09-09 09:56:21,468 [DEBUG] stderr: 
+2026-09-09 09:56:21,468 [DEBUG] Running: git branch --list
+2026-09-09 09:56:21,573 [DEBUG] stdout: * main
+2026-09-09 09:56:21,573 [DEBUG] stderr: 
+2026-09-09 09:56:21,574 [DEBUG] Running: git ls-remote --heads origin
+2026-09-09 09:56:22,465 [DEBUG] stdout: 61726c9335e3cb3325886fc7ec21a293ec3cc79e	refs/heads/main
+2026-09-09 09:56:22,465 [DEBUG] stderr: 
+2026-09-09 09:56:22,466 [INFO] Detected branches:
+2026-09-09 09:56:22,466 [INFO]   1. main
+2026-09-09 09:56:22,466 [INFO]   2. Enter a new branch name
+2026-09-09 09:56:22,990 [DEBUG] Running: git status --porcelain
+2026-09-09 09:56:23,109 [DEBUG] stdout: M TeleDrive.Core/Services/MtProtoTelegramService.cs
+ M TeleDrive.WPF/App.xaml.cs
+ M TeleDrive.WPF/ViewModels/Wizard/StoragePageViewModel.cs
+ M build.ps1
+ M push_to_github.py
+?? logs/push_to_github_20260909_094705.log
+2026-09-09 09:56:23,109 [DEBUG] stderr: 
+2026-09-09 09:56:23,109 [DEBUG] Running: git status --porcelain
+2026-09-09 09:56:23,226 [DEBUG] stdout: M TeleDrive.Core/Services/MtProtoTelegramService.cs
+ M TeleDrive.WPF/App.xaml.cs
+ M TeleDrive.WPF/ViewModels/Wizard/StoragePageViewModel.cs
+ M build.ps1
+ M push_to_github.py
+?? logs/push_to_github_20260909_094705.log
+2026-09-09 09:56:23,227 [DEBUG] stderr: 
+2026-09-09 09:56:23,227 [DEBUG] Running: git rev-parse HEAD
+2026-09-09 09:56:23,314 [DEBUG] stdout: 61726c9335e3cb3325886fc7ec21a293ec3cc79e
+2026-09-09 09:56:23,314 [DEBUG] stderr: 
+2026-09-09 09:56:23,315 [DEBUG] Running: git stash
+2026-09-09 09:56:23,706 [DEBUG] stdout: Saved working directory and index state WIP on main: 61726c9 Merge remote history, keep local fixes
+2026-09-09 09:56:23,706 [DEBUG] stderr: warning: in the working copy of 'TeleDrive.Core/Services/MtProtoTelegramService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/App.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/Wizard/StoragePageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'build.ps1', LF will be replaced by CRLF the next time Git touches it
+2026-09-09 09:56:23,706 [DEBUG] Running: git branch --list
+2026-09-09 09:56:23,812 [DEBUG] stdout: * main
+2026-09-09 09:56:23,812 [DEBUG] stderr: 
+2026-09-09 09:56:23,812 [DEBUG] Running: git checkout main
+2026-09-09 09:56:23,965 [DEBUG] stdout: 
+2026-09-09 09:56:23,965 [DEBUG] stderr: Already on 'main'
+2026-09-09 09:56:23,965 [DEBUG] Running: git stash pop
+2026-09-09 09:56:24,226 [DEBUG] stdout: On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   TeleDrive.Core/Services/MtProtoTelegramService.cs
+	modified:   TeleDrive.WPF/App.xaml.cs
+	modified:   TeleDrive.WPF/ViewModels/Wizard/StoragePageViewModel.cs
+	modified:   build.ps1
+	modified:   push_to_github.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	logs/push_to_github_20260909_094705.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (4adc45227eea4a974c46ac8a08569160c04987ba)
+2026-09-09 09:56:24,227 [DEBUG] stderr: 
+2026-09-09 09:56:30,014 [DEBUG] Running: git add -A
+2026-09-09 09:56:30,146 [DEBUG] stdout: 
+2026-09-09 09:56:30,146 [DEBUG] stderr: 
+2026-09-09 09:56:30,146 [DEBUG] Running: git status --porcelain
+2026-09-09 09:56:30,267 [DEBUG] stdout: M  TeleDrive.Core/Services/MtProtoTelegramService.cs
+M  TeleDrive.WPF/App.xaml.cs
+M  TeleDrive.WPF/ViewModels/Wizard/StoragePageViewModel.cs
+M  build.ps1
+A  logs/push_to_github_20260909_094705.log
+M  push_to_github.py
+2026-09-09 09:56:30,268 [DEBUG] stderr: 
+2026-09-09 09:56:30,268 [DEBUG] Running: git commit -m bugfixes
+2026-09-09 09:56:30,510 [DEBUG] stdout: [main 700446b] bugfixes
+ 6 files changed, 645 insertions(+), 19 deletions(-)
+ create mode 100644 logs/push_to_github_20260909_094705.log
+2026-09-09 09:56:30,510 [DEBUG] stderr: 
+2026-09-09 09:56:30,510 [INFO] Checking for remote changes before pushing.
+2026-09-09 09:56:30,510 [DEBUG] Running: git fetch origin
+2026-09-09 09:56:31,567 [DEBUG] stdout: 
+2026-09-09 09:56:31,567 [DEBUG] stderr: 
+2026-09-09 09:56:31,567 [DEBUG] Running: git rev-parse --verify --quiet origin/main
+2026-09-09 09:56:31,656 [DEBUG] stdout: 61726c9335e3cb3325886fc7ec21a293ec3cc79e
+2026-09-09 09:56:31,656 [DEBUG] stderr: 
+2026-09-09 09:56:31,656 [DEBUG] Running: git rev-parse main
+2026-09-09 09:56:31,754 [DEBUG] stdout: 700446bc1a3319ba25d0119999593abaac36cee0
+2026-09-09 09:56:31,754 [DEBUG] stderr: 
+2026-09-09 09:56:31,754 [DEBUG] Running: git rev-parse origin/main
+2026-09-09 09:56:31,847 [DEBUG] stdout: 61726c9335e3cb3325886fc7ec21a293ec3cc79e
+2026-09-09 09:56:31,848 [DEBUG] stderr: 
+2026-09-09 09:56:31,848 [DEBUG] Running: git rev-list --count main..origin/main
+2026-09-09 09:56:31,943 [DEBUG] stdout: 0
+2026-09-09 09:56:31,943 [DEBUG] stderr: 
+2026-09-09 09:56:31,943 [DEBUG] Running: git push -u origin main --progress
+2026-09-09 09:56:34,208 [DEBUG] Enumerating objects: 26, done.
+2026-09-09 09:56:34,208 [DEBUG] Counting objects:   3% (1/26)
+2026-09-09 09:56:34,209 [DEBUG] Counting objects:   7% (2/26)
+2026-09-09 09:56:34,209 [DEBUG] Counting objects:  11% (3/26)
+2026-09-09 09:56:34,209 [DEBUG] Counting objects:  15% (4/26)
+2026-09-09 09:56:34,210 [DEBUG] Counting objects:  19% (5/26)
+2026-09-09 09:56:34,210 [DEBUG] Counting objects:  23% (6/26)
+2026-09-09 09:56:34,210 [DEBUG] Counting objects:  26% (7/26)
+2026-09-09 09:56:34,210 [DEBUG] Counting objects:  30% (8/26)
+2026-09-09 09:56:34,210 [DEBUG] Counting objects:  34% (9/26)
+2026-09-09 09:56:34,211 [DEBUG] Counting objects:  38% (10/26)
+2026-09-09 09:56:34,211 [DEBUG] Counting objects:  42% (11/26)
+2026-09-09 09:56:34,211 [DEBUG] Counting objects:  46% (12/26)
+2026-09-09 09:56:34,211 [DEBUG] Counting objects:  50% (13/26)
+2026-09-09 09:56:34,211 [DEBUG] Counting objects:  53% (14/26)
+2026-09-09 09:56:34,212 [DEBUG] Counting objects:  57% (15/26)
+2026-09-09 09:56:34,212 [DEBUG] Counting objects:  61% (16/26)
+2026-09-09 09:56:34,212 [DEBUG] Counting objects:  65% (17/26)
+2026-09-09 09:56:34,212 [DEBUG] Counting objects:  69% (18/26)
+2026-09-09 09:56:34,212 [DEBUG] Counting objects:  73% (19/26)
+2026-09-09 09:56:34,213 [DEBUG] Counting objects:  76% (20/26)
+2026-09-09 09:56:34,213 [DEBUG] Counting objects:  80% (21/26)
+2026-09-09 09:56:34,213 [DEBUG] Counting objects:  84% (22/26)
+2026-09-09 09:56:34,213 [DEBUG] Counting objects:  88% (23/26)
+2026-09-09 09:56:34,213 [DEBUG] Counting objects:  92% (24/26)
+2026-09-09 09:56:34,214 [DEBUG] Counting objects:  96% (25/26)
+2026-09-09 09:56:34,214 [DEBUG] Counting objects: 100% (26/26)
+2026-09-09 09:56:34,214 [DEBUG] Counting objects: 100% (26/26), done.
+2026-09-09 09:56:34,214 [DEBUG] Delta compression using up to 16 threads
+2026-09-09 09:56:34,214 [DEBUG] Compressing objects:   7% (1/14)
+2026-09-09 09:56:34,214 [DEBUG] Compressing objects:  14% (2/14)
+2026-09-09 09:56:34,214 [DEBUG] Compressing objects:  21% (3/14)
+2026-09-09 09:56:34,215 [DEBUG] Compressing objects:  28% (4/14)
+2026-09-09 09:56:34,215 [DEBUG] Compressing objects:  35% (5/14)
+2026-09-09 09:56:34,216 [DEBUG] Compressing objects:  42% (6/14)
+2026-09-09 09:56:34,216 [DEBUG] Compressing objects:  50% (7/14)
+2026-09-09 09:56:34,216 [DEBUG] Compressing objects:  57% (8/14)
+2026-09-09 09:56:34,216 [DEBUG] Compressing objects:  64% (9/14)
+2026-09-09 09:56:34,217 [DEBUG] Compressing objects:  71% (10/14)
+2026-09-09 09:56:34,217 [DEBUG] Compressing objects:  78% (11/14)
+2026-09-09 09:56:34,217 [DEBUG] Compressing objects:  85% (12/14)
+2026-09-09 09:56:34,217 [DEBUG] Compressing objects:  92% (13/14)
+2026-09-09 09:56:34,218 [DEBUG] Compressing objects: 100% (14/14)
+2026-09-09 09:56:34,218 [DEBUG] Compressing objects: 100% (14/14), done.
+2026-09-09 09:56:34,219 [DEBUG] Writing objects:   7% (1/14)
+2026-09-09 09:56:34,219 [DEBUG] Writing objects:  14% (2/14)
+2026-09-09 09:56:34,220 [DEBUG] Writing objects:  21% (3/14)
+2026-09-09 09:56:34,220 [DEBUG] Writing objects:  28% (4/14)
+2026-09-09 09:56:34,220 [DEBUG] Writing objects:  35% (5/14)
+2026-09-09 09:56:34,220 [DEBUG] Writing objects:  42% (6/14)
+2026-09-09 09:56:34,220 [DEBUG] Writing objects:  50% (7/14)
+2026-09-09 09:56:34,220 [DEBUG] Writing objects:  57% (8/14)
+2026-09-09 09:56:34,220 [DEBUG] Writing objects:  64% (9/14)
+2026-09-09 09:56:34,220 [DEBUG] Writing objects:  71% (10/14)
+2026-09-09 09:56:34,221 [DEBUG] Writing objects:  78% (11/14)
+2026-09-09 09:56:34,222 [DEBUG] Writing objects:  85% (12/14)
+2026-09-09 09:56:34,223 [DEBUG] Writing objects:  92% (13/14)
+2026-09-09 09:56:34,223 [DEBUG] Writing objects: 100% (14/14)
+2026-09-09 09:56:34,223 [DEBUG] Writing objects: 100% (14/14), 7.15 KiB | 1.43 MiB/s, done.
+2026-09-09 09:56:34,223 [DEBUG] Total 14 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
+2026-09-09 09:56:35,268 [DEBUG] remote: Resolving deltas:   0% (0/10)
+2026-09-09 09:56:35,268 [DEBUG] remote: Resolving deltas:  10% (1/10)
+2026-09-09 09:56:35,268 [DEBUG] remote: Resolving deltas:  20% (2/10)
+2026-09-09 09:56:35,268 [DEBUG] remote: Resolving deltas:  30% (3/10)
+2026-09-09 09:56:35,268 [DEBUG] remote: Resolving deltas:  40% (4/10)
+2026-09-09 09:56:35,269 [DEBUG] remote: Resolving deltas:  50% (5/10)
+2026-09-09 09:56:35,269 [DEBUG] remote: Resolving deltas:  60% (6/10)
+2026-09-09 09:56:35,269 [DEBUG] remote: Resolving deltas:  70% (7/10)
+2026-09-09 09:56:35,269 [DEBUG] remote: Resolving deltas:  80% (8/10)
+2026-09-09 09:56:35,269 [DEBUG] remote: Resolving deltas:  90% (9/10)
+2026-09-09 09:56:35,269 [DEBUG] remote: Resolving deltas: 100% (10/10)
+2026-09-09 09:56:35,269 [DEBUG] remote: Resolving deltas: 100% (10/10), completed with 10 local objects.
+2026-09-09 09:56:35,274 [DEBUG] To https://github.com/MoRDekai1364/TeleDrive.git
+2026-09-09 09:56:35,274 [DEBUG] 61726c9..700446b  main -> main
+2026-09-09 09:56:35,301 [DEBUG] branch 'main' set up to track 'origin/main'.
+2026-09-09 09:56:35,308 [INFO] Push finished in 3.4s. Done.

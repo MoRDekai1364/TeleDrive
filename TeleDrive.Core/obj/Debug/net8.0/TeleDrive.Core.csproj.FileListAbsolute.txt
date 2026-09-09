@@ -12,3 +12,4 @@ D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\D
 D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.xml
 D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.pdb
 D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\ref\TeleDrive.Core.dll
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.sourcelink.json

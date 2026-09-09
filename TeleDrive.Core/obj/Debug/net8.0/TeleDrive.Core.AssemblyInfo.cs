@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TeleDrive.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+700446bc1a3319ba25d0119999593abaac36cee0")]
 [assembly: System.Reflection.AssemblyProductAttribute("TeleDrive.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TeleDrive.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

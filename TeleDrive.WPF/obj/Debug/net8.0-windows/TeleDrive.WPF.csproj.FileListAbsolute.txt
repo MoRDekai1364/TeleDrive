@@ -75,3 +75,4 @@ D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\obj\De
 D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\obj\Debug\net8.0-windows\TeleDrive.WPF.pdb
 D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\obj\Debug\net8.0-windows\TeleDrive.WPF.genruntimeconfig.cache
 D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\obj\Debug\net8.0-windows\ref\TeleDrive.WPF.dll
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\obj\Debug\net8.0-windows\TeleDrive.WPF.sourcelink.json
