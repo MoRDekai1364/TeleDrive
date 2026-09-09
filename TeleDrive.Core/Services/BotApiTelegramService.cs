@@ -40,8 +40,6 @@ public class BotApiTelegramService : ITelegramService
         var fileId = message.Document?.FileId
             ?? throw new InvalidOperationException("Message does not contain a document.");
 
-        var file = await _client.GetFile(fileId, cancellationToken);
-
         var directory = Path.GetDirectoryName(destinationPath);
         if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
         {
@@ -49,7 +47,7 @@ public class BotApiTelegramService : ITelegramService
         }
 
         await using var destinationStream = System.IO.File.Create(destinationPath);
-        await _client.DownloadFile(file, destinationStream, cancellationToken);
+        await _client.GetInfoAndDownloadFile(fileId, destinationStream, cancellationToken);
 
         await _client.DeleteMessage(channelId, message.MessageId, cancellationToken);
     }
