@@ -1,0 +1,31 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleDrive.Core", "TeleDrive.Core\TeleDrive.Core.csproj", "{7C51449B-3F9D-4A1E-9DCF-FD7BBA6E4055}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleDrive.WPF", "TeleDrive.WPF\TeleDrive.WPF.csproj", "{5D85B35C-1F27-43C7-8E56-48036914BFF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C51449B-3F9D-4A1E-9DCF-FD7BBA6E4055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C51449B-3F9D-4A1E-9DCF-FD7BBA6E4055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C51449B-3F9D-4A1E-9DCF-FD7BBA6E4055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C51449B-3F9D-4A1E-9DCF-FD7BBA6E4055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D85B35C-1F27-43C7-8E56-48036914BFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D85B35C-1F27-43C7-8E56-48036914BFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D85B35C-1F27-43C7-8E56-48036914BFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D85B35C-1F27-43C7-8E56-48036914BFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EF76A43-B376-453A-A164-BF3DE9F76BCC}
+	EndGlobalSection
+EndGlobal

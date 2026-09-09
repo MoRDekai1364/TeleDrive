@@ -1,0 +1,50 @@
+<UserControl x:Class="TeleDrive.WPF.Views.Wizard.Pages.MtProtoSetupPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel VerticalAlignment="Center">
+        <TextBlock Text="Sign in with your Telegram account" FontSize="20" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,16" />
+
+        <TextBlock Text="Get your api_id and api_hash from my.telegram.org" TextWrapping="Wrap"
+                   Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,0,0,12" />
+
+        <TextBlock Text="api_id" Foreground="{DynamicResource TextSecondaryBrush}" />
+        <TextBox Text="{Binding ApiId, UpdateSourceTrigger=PropertyChanged}" Padding="6" Margin="0,2,0,8"
+                 Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource TextPrimaryBrush}"
+                 BorderBrush="{DynamicResource BorderBrush}" />
+
+        <TextBlock Text="api_hash" Foreground="{DynamicResource TextSecondaryBrush}" />
+        <TextBox Text="{Binding ApiHash, UpdateSourceTrigger=PropertyChanged}" Padding="6" Margin="0,2,0,8"
+                 Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource TextPrimaryBrush}"
+                 BorderBrush="{DynamicResource BorderBrush}" />
+
+        <TextBlock Text="Phone number" Foreground="{DynamicResource TextSecondaryBrush}" />
+        <TextBox Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Padding="6" Margin="0,2,0,12"
+                 Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource TextPrimaryBrush}"
+                 BorderBrush="{DynamicResource BorderBrush}" />
+
+        <Button Content="Connect" Width="120" HorizontalAlignment="Left"
+                Command="{Binding ConnectCommand}" />
+
+        <StackPanel Margin="0,16,0,0" Visibility="{Binding IsAwaitingOtp, Converter={StaticResource BoolToVisibilityConverter}}">
+            <TextBlock Text="Enter the code Telegram sent you" Foreground="{DynamicResource TextSecondaryBrush}" />
+            <TextBox Text="{Binding OtpCode, UpdateSourceTrigger=PropertyChanged}" Padding="6" Margin="0,4,0,8"
+                     Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource TextPrimaryBrush}"
+                     BorderBrush="{DynamicResource BorderBrush}" />
+            <Button Content="Submit Code" Width="120" HorizontalAlignment="Left" Command="{Binding SubmitOtpCommand}" />
+        </StackPanel>
+
+        <StackPanel Margin="0,16,0,0" Visibility="{Binding IsAwaitingPassword, Converter={StaticResource BoolToVisibilityConverter}}">
+            <TextBlock Text="Two-factor password" Foreground="{DynamicResource TextSecondaryBrush}" />
+            <PasswordBox Padding="6" Margin="0,4,0,8"
+                         PasswordChanged="PasswordBox_PasswordChanged"
+                         Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource TextPrimaryBrush}"
+                         BorderBrush="{DynamicResource BorderBrush}" />
+            <Button Content="Submit Password" Width="140" HorizontalAlignment="Left" Command="{Binding SubmitPasswordCommand}" />
+        </StackPanel>
+
+        <TextBlock Text="{Binding StatusMessage}" Margin="0,12,0,0"
+                   Foreground="{DynamicResource TextPrimaryBrush}"
+                   Visibility="{Binding StatusMessage, Converter={StaticResource NullToVisibilityConverter}}" />
+    </StackPanel>
+</UserControl>

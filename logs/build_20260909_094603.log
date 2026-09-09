@@ -1,0 +1,36 @@
+[09:46:03] TeleDrive build starting. Configuration=Debug
+[09:46:03] Log file: C:\Users\MORDEK~1\AppData\Local\Temp\TeleDrive_Build\build_20260909_094603.log
+[09:46:03] dotnet SDK version: 10.0.111
+  Determining projects to restore...
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\TeleDrive.Core.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead. [D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.sln]
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\TeleDrive.WPF.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead. [D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.sln]
+  All projects are up-to-date for restore.
+[09:46:05] Restore succeeded.
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\TeleDrive.Core.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead.
+  TeleDrive.Core -> D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\bin\Debug\net8.0\TeleDrive.Core.dll
+
+Build succeeded.
+
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\TeleDrive.Core.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead.
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.17
+[09:46:07] TeleDrive.Core build succeeded.
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\TeleDrive.WPF.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead.
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\TeleDrive.Core.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead.
+  TeleDrive.Core -> D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\bin\Debug\net8.0\TeleDrive.Core.dll
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\TeleDrive.WPF_1blsgcgq_wpftmp.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead.
+  TeleDrive.WPF -> D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\bin\Debug\net8.0-windows\TeleDrive.WPF.dll
+
+Build succeeded.
+
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\TeleDrive.WPF.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead.
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\TeleDrive.Core.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead.
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.WPF\TeleDrive.WPF_1blsgcgq_wpftmp.csproj : warning NU1603: TeleDrive.Core depends on Telegram.Bot (>= 21.2.0) but Telegram.Bot 21.2.0 was not found. Telegram.Bot 22.0.0 was resolved instead.
+    3 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.80
+[09:46:12] TeleDrive.WPF build succeeded.
+[09:46:12] BUILD SUCCEEDED.

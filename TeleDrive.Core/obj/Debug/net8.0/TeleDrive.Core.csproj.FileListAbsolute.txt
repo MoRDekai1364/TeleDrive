@@ -1,0 +1,14 @@
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\bin\Debug\net8.0\TeleDrive.Core.deps.json
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\bin\Debug\net8.0\TeleDrive.Core.dll
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\bin\Debug\net8.0\TeleDrive.Core.pdb
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\bin\Debug\net8.0\TeleDrive.Core.xml
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.csproj.AssemblyReference.cache
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.AssemblyInfoInputs.cache
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.AssemblyInfo.cs
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.csproj.CoreCompileInputs.cache
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.dll
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\refint\TeleDrive.Core.dll
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.xml
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\TeleDrive.Core.pdb
+D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main\TeleDrive.Core\obj\Debug\net8.0\ref\TeleDrive.Core.dll

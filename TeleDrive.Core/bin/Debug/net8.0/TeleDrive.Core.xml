@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TeleDrive.Core</name>
+    </assembly>
+    <members>
+        <member name="M:TeleDrive.Core.Interfaces.IChunkingService.SplitAsync(System.String,System.Int64,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Splits a file into fixed-size chunks written to a working directory.
+            </summary>
+            <param name="filePath">Absolute path of the source file.</param>
+            <param name="chunkSizeBytes">Maximum size of each chunk in bytes.</param>
+            <param name="workingDirectory">Directory to write chunk files into.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+            <returns>Ordered list of chunk file paths and their metadata.</returns>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.IChunkingService.ReassembleAsync(System.Collections.Generic.List{TeleDrive.Core.Models.FileChunk},System.Collections.Generic.List{System.String},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Reassembles chunk files into a single output file at the correct offsets.
+            </summary>
+            <param name="chunks">Ordered chunk metadata describing the file.</param>
+            <param name="chunkFilePaths">Local paths of the downloaded chunk files, matching chunk order.</param>
+            <param name="destinationPath">Absolute path to write the reassembled file.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.IChunkingService.ComputeHashAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Computes the SHA-256 hash of a file.
+            </summary>
+            <param name="filePath">Absolute path of the file to hash.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+            <returns>Lowercase hex-encoded SHA-256 hash.</returns>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.IIndexService.ReadIndexAsync(System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Reads the current file index from the pinned index message in the vault channel.
+            </summary>
+            <param name="channelId">Vault channel identifier.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+            <returns>List of all files currently tracked in the index.</returns>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.IIndexService.WriteIndexAsync(System.Collections.Generic.List{TeleDrive.Core.Models.VaultFile},System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Writes the given file list back to the pinned index message in the vault channel.
+            </summary>
+            <param name="files">Complete, up-to-date list of files to persist.</param>
+            <param name="channelId">Vault channel identifier.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.IIndexService.RebuildLocalCacheAsync(System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Rebuilds the local SQLite cache from the remote index.
+            </summary>
+            <param name="channelId">Vault channel identifier.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.IIndexService.ReadLocalCacheAsync">
+            <summary>
+            Reads the file list from the local SQLite cache without contacting Telegram.
+            </summary>
+            <returns>List of files as of the last cache rebuild or update.</returns>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.ITelegramService.UploadFileAsync(System.String,System.Int64,System.IProgress{System.Int64},System.Threading.CancellationToken)">
+            <summary>
+            Uploads a file as a document message to the vault channel.
+            </summary>
+            <param name="filePath">Absolute path of the local file to upload.</param>
+            <param name="channelId">Target channel identifier.</param>
+            <param name="progress">Optional progress reporter for bytes sent.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+            <returns>The message id of the uploaded document.</returns>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.ITelegramService.DownloadFileAsync(System.Int64,System.Int64,System.String,System.IProgress{System.Int64},System.Threading.CancellationToken)">
+            <summary>
+            Downloads a document message to a local file path.
+            </summary>
+            <param name="messageId">Identifier of the message containing the document.</param>
+            <param name="channelId">Channel identifier the message belongs to.</param>
+            <param name="destinationPath">Absolute path to write the downloaded file.</param>
+            <param name="progress">Optional progress reporter for bytes received.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.ITelegramService.DeleteMessageAsync(System.Int64,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a message from a channel.
+            </summary>
+            <param name="messageId">Identifier of the message to delete.</param>
+            <param name="channelId">Channel identifier the message belongs to.</param>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.ITelegramService.SendTextAsync(System.String,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Sends a plain text message to a channel.
+            </summary>
+            <param name="text">Text content to send.</param>
+            <param name="channelId">Target channel identifier.</param>
+            <returns>The message id of the sent text message.</returns>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.ITelegramService.TestConnectionAsync(System.Threading.CancellationToken)">
+            <summary>
+            Verifies that the current credentials can authenticate and reach Telegram.
+            </summary>
+            <returns>True if the connection is valid.</returns>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.ITelegramService.EditMessageTextAsync(System.Int64,System.Int64,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Edits the text content of an existing text message.
+            </summary>
+            <param name="messageId">Identifier of the message to edit.</param>
+            <param name="channelId">Channel identifier the message belongs to.</param>
+            <param name="newText">Replacement text content.</param>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.ITelegramService.PinMessageAsync(System.Int64,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Pins a message in a channel.
+            </summary>
+            <param name="messageId">Identifier of the message to pin.</param>
+            <param name="channelId">Channel identifier the message belongs to.</param>
+        </member>
+        <member name="M:TeleDrive.Core.Interfaces.ITelegramService.GetPinnedMessageAsync(System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the currently pinned message in a channel, if any.
+            </summary>
+            <param name="channelId">Channel identifier to query.</param>
+            <returns>The message id and text of the pinned message, or null if none is pinned.</returns>
+        </member>
+        <member name="T:TeleDrive.Core.Services.BotApiTelegramService">
+            <summary>
+            ITelegramService implementation backed by the Telegram Bot API.
+            </summary>
+        </member>
+        <member name="T:TeleDrive.Core.Services.ChunkingService">
+            <summary>
+            Splits and reassembles files via streamed I/O, with SHA-256 hashing per chunk and whole file.
+            </summary>
+        </member>
+        <member name="T:TeleDrive.Core.Services.IndexService">
+            <summary>
+            Reads and writes the JSON file index stored in a pinned message in the vault channel,
+            with a local SQLite mirror for instant offline browsing.
+            </summary>
+        </member>
+        <member name="T:TeleDrive.Core.Services.MtProtoTelegramService">
+            <summary>
+            ITelegramService implementation backed by the MTProto user account API via WTelegramClient.
+            Login (phone, OTP, optional 2FA password) is driven by the configFunc callback supplied by the wizard.
+            </summary>
+        </member>
+        <member name="T:TeleDrive.Core.Services.TransferOrchestrator">
+            <summary>
+            Bounded work queue with a resizable worker pool that runs upload and download transfers,
+            reporting per-file progress and retrying failed chunks with exponential backoff.
+            </summary>
+        </member>
+    </members>
+</doc>

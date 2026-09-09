@@ -1,0 +1,58 @@
+<UserControl x:Class="TeleDrive.WPF.Views.Pages.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="24" MaxWidth="480" HorizontalAlignment="Left">
+        <TextBlock Text="Settings" FontSize="22" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,20" />
+
+        <TextBlock Text="Connection" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,6" />
+        <TextBlock Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,0,0,20">
+            <Run Text="{Binding ConnectionMode, Mode=OneWay}" />
+            <Run Text=" — Vault channel " />
+            <Run Text="{Binding VaultChannelId, Mode=OneWay}" />
+        </TextBlock>
+
+        <TextBlock Text="Theme" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,6" />
+        <ComboBox ItemsSource="{Binding AvailableThemes}"
+                  SelectedItem="{Binding SelectedTheme}"
+                  Width="160" HorizontalAlignment="Left" Margin="0,0,0,20" />
+
+        <TextBlock Text="Concurrent transfers" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,6" />
+        <DockPanel Margin="0,0,0,20">
+            <TextBlock DockPanel.Dock="Right" Text="{Binding ConcurrentTransferLimit}"
+                       Foreground="{DynamicResource TextSecondaryBrush}" Margin="12,0,0,0" />
+            <Slider Minimum="1" Maximum="8" TickFrequency="1" IsSnapToTickEnabled="True"
+                    Value="{Binding ConcurrentTransferLimit}" Width="220" HorizontalAlignment="Left" />
+        </DockPanel>
+
+        <TextBlock Text="Retry attempts" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,6" />
+        <DockPanel Margin="0,0,0,20">
+            <TextBlock DockPanel.Dock="Right" Text="{Binding MaxRetryAttempts}"
+                       Foreground="{DynamicResource TextSecondaryBrush}" Margin="12,0,0,0" />
+            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"
+                    Value="{Binding MaxRetryAttempts}" Width="220" HorizontalAlignment="Left" />
+        </DockPanel>
+
+        <TextBlock Text="Retry backoff base (ms)" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,6" />
+        <DockPanel Margin="0,0,0,20">
+            <TextBlock DockPanel.Dock="Right" Text="{Binding RetryBackoffBaseMilliseconds}"
+                       Foreground="{DynamicResource TextSecondaryBrush}" Margin="12,0,0,0" />
+            <Slider Minimum="100" Maximum="5000" TickFrequency="100" IsSnapToTickEnabled="True"
+                    Value="{Binding RetryBackoffBaseMilliseconds}" Width="220" HorizontalAlignment="Left" />
+        </DockPanel>
+
+        <TextBlock Text="Local cache" FontWeight="SemiBold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,6" />
+        <Button Content="Rebuild Cache" Width="140" HorizontalAlignment="Left"
+                Command="{Binding ClearCacheCommand}" />
+
+        <TextBlock Text="{Binding StatusMessage}" Margin="0,12,0,0"
+                   Foreground="{DynamicResource TextSecondaryBrush}"
+                   Visibility="{Binding StatusMessage, Converter={StaticResource NullToVisibilityConverter}}" />
+    </StackPanel>
+</UserControl>
