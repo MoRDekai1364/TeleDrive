@@ -87,9 +87,19 @@ public partial class App : Application
 
     public static void InitializeServices()
     {
-        TelegramService = Settings.ConnectionMode == ConnectionMode.BotApi
-            ? new BotApiTelegramService(Settings.BotToken ?? string.Empty)
-            : null;
+        TelegramService = Settings.ConnectionMode switch
+        {
+            ConnectionMode.BotApi => new BotApiTelegramService(Settings.BotToken ?? string.Empty),
+            ConnectionMode.MtProto => new MtProtoTelegramService(
+                Settings.ApiId ?? 0,
+                Settings.ApiHash ?? string.Empty,
+                field => field switch
+                {
+                    "phone_number" => Settings.PhoneNumber,
+                    _ => null
+                }),
+            _ => null
+        };
 
         if (TelegramService is not null)
         {

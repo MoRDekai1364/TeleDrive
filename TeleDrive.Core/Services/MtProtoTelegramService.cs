@@ -144,6 +144,24 @@ public class MtProtoTelegramService : ITelegramService, IDisposable
         return null;
     }
 
+    public async Task<long> CreateChannelAsync(string title, string about, CancellationToken cancellationToken)
+    {
+        await EnsureLoggedInAsync();
+
+        var update = await _client.Channels_CreateChannel(title, about, broadcast: true);
+
+        var users = new Dictionary<long, User>();
+        var chats = new Dictionary<long, ChatBase>();
+        update.CollectUsersChats(users, chats);
+
+        var newChannel = chats.Values.OfType<Channel>().FirstOrDefault()
+            ?? throw new InvalidOperationException("Channel creation did not return a channel.");
+
+        _channelAccessHashes[newChannel.id] = newChannel.access_hash;
+
+        return newChannel.id;
+    }
+
     private async Task EnsureLoggedInAsync()
     {
         _user ??= await _client.LoginUserIfNeeded();

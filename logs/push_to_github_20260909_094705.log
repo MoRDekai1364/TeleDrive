@@ -1,0 +1,562 @@
+2026-09-09 09:47:05,002 [INFO] Source folder: D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main
+2026-09-09 09:47:05,002 [INFO] Temp log: C:\Users\MORDEK~1\AppData\Local\Temp\push_to_github_20260909_094705.log
+2026-09-09 09:47:05,003 [DEBUG] Running: git --version
+2026-09-09 09:47:05,126 [DEBUG] stdout: git version 2.55.0.windows.2
+2026-09-09 09:47:05,126 [DEBUG] stderr: 
+2026-09-09 09:47:05,126 [INFO] No git repository found in this folder. Initializing.
+2026-09-09 09:47:05,127 [DEBUG] Running: git init
+2026-09-09 09:47:05,282 [DEBUG] stdout: Initialized empty Git repository in D:/Programming/Personal_projects_D/TeleDrive/TeleDrive-main/.git/
+2026-09-09 09:47:05,282 [DEBUG] stderr: 
+2026-09-09 09:47:05,282 [DEBUG] Running: git checkout -b main
+2026-09-09 09:47:05,380 [DEBUG] stdout: 
+2026-09-09 09:47:05,380 [DEBUG] stderr: Switched to a new branch 'main'
+2026-09-09 09:47:05,380 [DEBUG] Running: git remote -v
+2026-09-09 09:47:05,473 [DEBUG] stdout: 
+2026-09-09 09:47:05,473 [DEBUG] stderr: 
+2026-09-09 09:47:11,939 [INFO] Verifying repository access.
+2026-09-09 09:47:11,940 [DEBUG] Running: git ls-remote https://github.com/MoRDekai1364/TeleDrive.git
+2026-09-09 09:47:13,490 [DEBUG] stdout: e72fa7a0cd4addfa063b8de111b7750d0ea3a890	HEAD
+e72fa7a0cd4addfa063b8de111b7750d0ea3a890	refs/heads/main
+2026-09-09 09:47:13,490 [DEBUG] stderr: 
+2026-09-09 09:47:13,490 [DEBUG] Running: git remote add origin https://github.com/MoRDekai1364/TeleDrive.git
+2026-09-09 09:47:13,591 [DEBUG] stdout: 
+2026-09-09 09:47:13,591 [DEBUG] stderr: 
+2026-09-09 09:47:13,591 [DEBUG] Running: git branch --list
+2026-09-09 09:47:13,688 [DEBUG] stdout: 
+2026-09-09 09:47:13,688 [DEBUG] stderr: 
+2026-09-09 09:47:13,688 [DEBUG] Running: git ls-remote --heads origin
+2026-09-09 09:47:14,718 [DEBUG] stdout: e72fa7a0cd4addfa063b8de111b7750d0ea3a890	refs/heads/main
+2026-09-09 09:47:14,718 [DEBUG] stderr: 
+2026-09-09 09:47:14,718 [INFO] Detected branches:
+2026-09-09 09:47:14,718 [INFO]   1. main
+2026-09-09 09:47:14,719 [INFO]   2. Enter a new branch name
+2026-09-09 09:47:16,010 [DEBUG] Running: git status --porcelain
+2026-09-09 09:47:16,112 [DEBUG] stdout: ?? Project_plans.md
+?? README.md
+?? TeleDrive.Core/
+?? TeleDrive.WPF/
+?? TeleDrive.sln
+?? build.ps1
+?? logs/
+?? push_to_github.py
+2026-09-09 09:47:16,112 [DEBUG] stderr: 
+2026-09-09 09:47:16,112 [DEBUG] Running: git status --porcelain
+2026-09-09 09:47:16,211 [DEBUG] stdout: ?? Project_plans.md
+?? README.md
+?? TeleDrive.Core/
+?? TeleDrive.WPF/
+?? TeleDrive.sln
+?? build.ps1
+?? logs/
+?? push_to_github.py
+2026-09-09 09:47:16,211 [DEBUG] stderr: 
+2026-09-09 09:47:16,211 [DEBUG] Running: git rev-parse HEAD
+2026-09-09 09:47:16,306 [DEBUG] stdout: HEAD
+2026-09-09 09:47:16,306 [DEBUG] stderr: fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+2026-09-09 09:47:16,306 [DEBUG] Running: git branch --list
+2026-09-09 09:47:16,400 [DEBUG] stdout: 
+2026-09-09 09:47:16,401 [DEBUG] stderr: 
+2026-09-09 09:47:16,401 [DEBUG] Running: git checkout -b main
+2026-09-09 09:47:16,498 [DEBUG] stdout: 
+2026-09-09 09:47:16,498 [DEBUG] stderr: Switched to a new branch 'main'
+2026-09-09 09:47:46,018 [DEBUG] Running: git add -A
+2026-09-09 09:47:48,158 [DEBUG] stdout: 
+2026-09-09 09:47:48,158 [DEBUG] stderr: warning: in the working copy of 'Project_plans.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Helpers/CrashLogger.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Helpers/HashHelper.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Helpers/SettingsHelper.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Interfaces/IChunkingService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Interfaces/IIndexService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Interfaces/ITelegramService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Models/AppSettings.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Models/ConnectionMode.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Models/FileChunk.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Models/PendingTransferRecord.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Models/TransferItem.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Models/VaultFile.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Services/BotApiTelegramService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Services/ChunkingService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Services/IndexService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Services/MtProtoTelegramService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/Services/TransferOrchestrator.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.Core/TeleDrive.Core.csproj', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/App.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/App.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Converters/CommonConverters.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Converters/CommonConverters.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/TeleDrive.WPF.csproj', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Themes/Dark.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Themes/Light.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Themes/ThemeManager.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/TrayIconManager.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/FilesPageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/MainViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/SettingsPageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/TransfersPageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/Wizard/BotApiSetupPageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/Wizard/ChooseModePageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/Wizard/DonePageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/Wizard/MtProtoSetupPageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/Wizard/StoragePageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/Wizard/WelcomePageViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/ViewModels/Wizard/WizardViewModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/MainWindow.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/MainWindow.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Pages/FilesPage.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Pages/FilesPage.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Pages/SettingsPage.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Pages/SettingsPage.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Pages/TransfersPage.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Pages/TransfersPage.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/BotApiSetupPage.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/BotApiSetupPage.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/ChooseModePage.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/ChooseModePage.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/DonePage.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/DonePage.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/MtProtoSetupPage.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/MtProtoSetupPage.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/StoragePage.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/StoragePage.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/WelcomePage.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/Pages/WelcomePage.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/WizardWindow.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.WPF/Views/Wizard/WizardWindow.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'TeleDrive.sln', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'build.ps1', LF will be replaced by CRLF the next time Git touches it
+2026-09-09 09:47:48,158 [DEBUG] Running: git status --porcelain
+2026-09-09 09:47:48,272 [DEBUG] stdout: A  Project_plans.md
+A  README.md
+A  TeleDrive.Core/Helpers/CrashLogger.cs
+A  TeleDrive.Core/Helpers/HashHelper.cs
+A  TeleDrive.Core/Helpers/SettingsHelper.cs
+A  TeleDrive.Core/Interfaces/IChunkingService.cs
+A  TeleDrive.Core/Interfaces/IIndexService.cs
+A  TeleDrive.Core/Interfaces/ITelegramService.cs
+A  TeleDrive.Core/Models/AppSettings.cs
+A  TeleDrive.Core/Models/ConnectionMode.cs
+A  TeleDrive.Core/Models/FileChunk.cs
+A  TeleDrive.Core/Models/PendingTransferRecord.cs
+A  TeleDrive.Core/Models/TransferItem.cs
+A  TeleDrive.Core/Models/VaultFile.cs
+A  TeleDrive.Core/Services/BotApiTelegramService.cs
+A  TeleDrive.Core/Services/ChunkingService.cs
+A  TeleDrive.Core/Services/IndexService.cs
+A  TeleDrive.Core/Services/MtProtoTelegramService.cs
+A  TeleDrive.Core/Services/TransferOrchestrator.cs
+A  TeleDrive.Core/TeleDrive.Core.csproj
+A  TeleDrive.Core/bin/Debug/net8.0/TeleDrive.Core.deps.json
+A  TeleDrive.Core/bin/Debug/net8.0/TeleDrive.Core.dll
+A  TeleDrive.Core/bin/Debug/net8.0/TeleDrive.Core.pdb
+A  TeleDrive.Core/bin/Debug/net8.0/TeleDrive.Core.xml
+A  TeleDrive.Core/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.AssemblyInfo.cs
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.AssemblyInfoInputs.cache
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.GeneratedMSBuildEditorConfig.editorconfig
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.GlobalUsings.g.cs
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.assets.cache
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.csproj.AssemblyReference.cache
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.csproj.CoreCompileInputs.cache
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.csproj.FileListAbsolute.txt
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.dll
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.pdb
+A  TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.xml
+A  TeleDrive.Core/obj/Debug/net8.0/ref/TeleDrive.Core.dll
+A  TeleDrive.Core/obj/Debug/net8.0/refint/TeleDrive.Core.dll
+A  TeleDrive.Core/obj/TeleDrive.Core.csproj.nuget.dgspec.json
+A  TeleDrive.Core/obj/TeleDrive.Core.csproj.nuget.g.props
+A  TeleDrive.Core/obj/TeleDrive.Core.csproj.nuget.g.targets
+A  TeleDrive.Core/obj/project.assets.json
+A  TeleDrive.Core/obj/project.nuget.cache
+A  TeleDrive.WPF/App.xaml
+A  TeleDrive.WPF/App.xaml.cs
+A  TeleDrive.WPF/Converters/CommonConverters.cs
+A  TeleDrive.WPF/Converters/CommonConverters.xaml
+A  TeleDrive.WPF/TeleDrive.WPF.csproj
+A  TeleDrive.WPF/Themes/Dark.xaml
+A  TeleDrive.WPF/Themes/Light.xaml
+A  TeleDrive.WPF/Themes/ThemeManager.cs
+A  TeleDrive.WPF/TrayIconManager.cs
+A  TeleDrive.WPF/ViewModels/FilesPageViewModel.cs
+A  TeleDrive.WPF/ViewModels/MainViewModel.cs
+A  TeleDrive.WPF/ViewModels/SettingsPageViewModel.cs
+A  TeleDrive.WPF/ViewModels/TransfersPageViewModel.cs
+A  TeleDrive.WPF/ViewModels/Wizard/BotApiSetupPageViewModel.cs
+A  TeleDrive.WPF/ViewModels/Wizard/ChooseModePageViewModel.cs
+A  TeleDrive.WPF/ViewModels/Wizard/DonePageViewModel.cs
+A  TeleDrive.WPF/ViewModels/Wizard/MtProtoSetupPageViewModel.cs
+A  TeleDrive.WPF/ViewModels/Wizard/StoragePageViewModel.cs
+A  TeleDrive.WPF/ViewModels/Wizard/WelcomePageViewModel.cs
+A  TeleDrive.WPF/ViewModels/Wizard/WizardViewModel.cs
+A  TeleDrive.WPF/Views/MainWindow.xaml
+A  TeleDrive.WPF/Views/MainWindow.xaml.cs
+A  TeleDrive.WPF/Views/Pages/FilesPage.xaml
+A  TeleDrive.WPF/Views/Pages/FilesPage.xaml.cs
+A  TeleDrive.WPF/Views/Pages/SettingsPage.xaml
+A  TeleDrive.WPF/Views/Pages/SettingsPage.xaml.cs
+A  TeleDrive.WPF/Views/Pages/TransfersPage.xaml
+A  TeleDrive.WPF/Views/Pages/TransfersPage.xaml.cs
+A  TeleDrive.WPF/Views/Wizard/Pages/BotApiSetupPage.xaml
+A  TeleDrive.WPF/Views/Wizard/Pages/BotApiSetupPage.xaml.cs
+A  TeleDrive.WPF/Views/Wizard/Pages/ChooseModePage.xaml
+A  TeleDrive.WPF/Views/Wizard/Pages/ChooseModePage.xaml.cs
+A  TeleDrive.WPF/Views/Wizard/Pages/DonePage.xaml
+A  TeleDrive.WPF/Views/Wizard/Pages/DonePage.xaml.cs
+A  TeleDrive.WPF/Views/Wizard/Pages/MtProtoSetupPage.xaml
+A  TeleDrive.WPF/Views/Wizard/Pages/MtProtoSetupPage.xaml.cs
+A  TeleDrive.WPF/Views/Wizard/Pages/StoragePage.xaml
+A  TeleDrive.WPF/Views/Wizard/Pages/StoragePage.xaml.cs
+A  TeleDrive.WPF/Views/Wizard/Pages/WelcomePage.xaml
+A  TeleDrive.WPF/Views/Wizard/Pages/WelcomePage.xaml.cs
+A  TeleDrive.WPF/Views/Wizard/WizardWindow.xaml
+A  TeleDrive.WPF/Views/Wizard/WizardWindow.xaml.cs
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/CommunityToolkit.Mvvm.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/Microsoft.Data.Sqlite.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/SQLitePCLRaw.batteries_v2.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/SQLitePCLRaw.core.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/SQLitePCLRaw.provider.e_sqlite3.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.Core.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.Core.pdb
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.Core.xml
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.deps.json
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.exe
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.pdb
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.runtimeconfig.json
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/Telegram.Bot.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/WTelegramClient.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-arm/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-arm64/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-armel/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-mips64/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-musl-arm/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-musl-arm64/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-musl-x64/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-ppc64le/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-s390x/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-x64/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-x86/native/libe_sqlite3.so
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/maccatalyst-x64/native/libe_sqlite3.dylib
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/osx-arm64/native/libe_sqlite3.dylib
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/osx-x64/native/libe_sqlite3.dylib
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/win-arm/native/e_sqlite3.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/win-arm64/native/e_sqlite3.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/win-x64/native/e_sqlite3.dll
+A  TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/win-x86/native/e_sqlite3.dll
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/App.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/App.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Converters/CommonConverters.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/GeneratedInternalTypeHelper.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDriv.6664318D.Up2Date
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.AssemblyInfo.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.AssemblyInfoInputs.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.GeneratedMSBuildEditorConfig.editorconfig
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.GlobalUsings.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.assets.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.csproj.AssemblyReference.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.csproj.CoreCompileInputs.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.csproj.FileListAbsolute.txt
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.dll
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.g.resources
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.genruntimeconfig.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.pdb
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.AssemblyInfo.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.AssemblyInfoInputs.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.GlobalUsings.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.assets.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_MarkupCompile.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_MarkupCompile.lref
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.AssemblyInfo.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.AssemblyInfoInputs.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.GlobalUsings.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.assets.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.AssemblyInfo.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.AssemblyInfoInputs.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.GlobalUsings.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.assets.cache
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Themes/Dark.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Themes/Light.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/MainWindow.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/MainWindow.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/FilesPage.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/FilesPage.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/SettingsPage.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/SettingsPage.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/TransfersPage.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/TransfersPage.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/BotApiSetupPage.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/BotApiSetupPage.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/ChooseModePage.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/ChooseModePage.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/DonePage.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/DonePage.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/MtProtoSetupPage.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/MtProtoSetupPage.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/StoragePage.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/StoragePage.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/WelcomePage.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/WelcomePage.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/WizardWindow.baml
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/WizardWindow.g.cs
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/apphost.exe
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/ref/TeleDrive.WPF.dll
+A  TeleDrive.WPF/obj/Debug/net8.0-windows/refint/TeleDrive.WPF.dll
+A  TeleDrive.WPF/obj/TeleDrive.WPF.csproj.nuget.dgspec.json
+A  TeleDrive.WPF/obj/TeleDrive.WPF.csproj.nuget.g.props
+A  TeleDrive.WPF/obj/TeleDrive.WPF.csproj.nuget.g.targets
+A  TeleDrive.WPF/obj/TeleDrive.WPF_al2o32ac_wpftmp.csproj.nuget.dgspec.json
+A  TeleDrive.WPF/obj/TeleDrive.WPF_al2o32ac_wpftmp.csproj.nuget.g.props
+A  TeleDrive.WPF/obj/TeleDrive.WPF_al2o32ac_wpftmp.csproj.nuget.g.targets
+A  TeleDrive.WPF/obj/TeleDrive.WPF_g5qt23s1_wpftmp.csproj.nuget.dgspec.json
+A  TeleDrive.WPF/obj/TeleDrive.WPF_g5qt23s1_wpftmp.csproj.nuget.g.props
+A  TeleDrive.WPF/obj/TeleDrive.WPF_g5qt23s1_wpftmp.csproj.nuget.g.targets
+A  TeleDrive.WPF/obj/project.assets.json
+A  TeleDrive.WPF/obj/project.nuget.cache
+A  TeleDrive.sln
+A  build.ps1
+A  logs/build_20260909_094603.log
+A  push_to_github.py
+2026-09-09 09:47:48,272 [DEBUG] stderr: 
+2026-09-09 09:47:48,273 [DEBUG] Running: git commit -m fixed bugs in TeleDrive.Core, TeleDrive.WPF and the .csproj
+2026-09-09 09:47:49,161 [DEBUG] stdout: [main (root-commit) 4010f62] fixed bugs in TeleDrive.Core, TeleDrive.WPF and the .csproj
+ 197 files changed, 9382 insertions(+)
+ create mode 100644 Project_plans.md
+ create mode 100644 README.md
+ create mode 100644 TeleDrive.Core/Helpers/CrashLogger.cs
+ create mode 100644 TeleDrive.Core/Helpers/HashHelper.cs
+ create mode 100644 TeleDrive.Core/Helpers/SettingsHelper.cs
+ create mode 100644 TeleDrive.Core/Interfaces/IChunkingService.cs
+ create mode 100644 TeleDrive.Core/Interfaces/IIndexService.cs
+ create mode 100644 TeleDrive.Core/Interfaces/ITelegramService.cs
+ create mode 100644 TeleDrive.Core/Models/AppSettings.cs
+ create mode 100644 TeleDrive.Core/Models/ConnectionMode.cs
+ create mode 100644 TeleDrive.Core/Models/FileChunk.cs
+ create mode 100644 TeleDrive.Core/Models/PendingTransferRecord.cs
+ create mode 100644 TeleDrive.Core/Models/TransferItem.cs
+ create mode 100644 TeleDrive.Core/Models/VaultFile.cs
+ create mode 100644 TeleDrive.Core/Services/BotApiTelegramService.cs
+ create mode 100644 TeleDrive.Core/Services/ChunkingService.cs
+ create mode 100644 TeleDrive.Core/Services/IndexService.cs
+ create mode 100644 TeleDrive.Core/Services/MtProtoTelegramService.cs
+ create mode 100644 TeleDrive.Core/Services/TransferOrchestrator.cs
+ create mode 100644 TeleDrive.Core/TeleDrive.Core.csproj
+ create mode 100644 TeleDrive.Core/bin/Debug/net8.0/TeleDrive.Core.deps.json
+ create mode 100644 TeleDrive.Core/bin/Debug/net8.0/TeleDrive.Core.dll
+ create mode 100644 TeleDrive.Core/bin/Debug/net8.0/TeleDrive.Core.pdb
+ create mode 100644 TeleDrive.Core/bin/Debug/net8.0/TeleDrive.Core.xml
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.AssemblyInfo.cs
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.AssemblyInfoInputs.cache
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.GeneratedMSBuildEditorConfig.editorconfig
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.GlobalUsings.g.cs
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.assets.cache
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.csproj.AssemblyReference.cache
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.csproj.CoreCompileInputs.cache
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.csproj.FileListAbsolute.txt
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.dll
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.pdb
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/TeleDrive.Core.xml
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/ref/TeleDrive.Core.dll
+ create mode 100644 TeleDrive.Core/obj/Debug/net8.0/refint/TeleDrive.Core.dll
+ create mode 100644 TeleDrive.Core/obj/TeleDrive.Core.csproj.nuget.dgspec.json
+ create mode 100644 TeleDrive.Core/obj/TeleDrive.Core.csproj.nuget.g.props
+ create mode 100644 TeleDrive.Core/obj/TeleDrive.Core.csproj.nuget.g.targets
+ create mode 100644 TeleDrive.Core/obj/project.assets.json
+ create mode 100644 TeleDrive.Core/obj/project.nuget.cache
+ create mode 100644 TeleDrive.WPF/App.xaml
+ create mode 100644 TeleDrive.WPF/App.xaml.cs
+ create mode 100644 TeleDrive.WPF/Converters/CommonConverters.cs
+ create mode 100644 TeleDrive.WPF/Converters/CommonConverters.xaml
+ create mode 100644 TeleDrive.WPF/TeleDrive.WPF.csproj
+ create mode 100644 TeleDrive.WPF/Themes/Dark.xaml
+ create mode 100644 TeleDrive.WPF/Themes/Light.xaml
+ create mode 100644 TeleDrive.WPF/Themes/ThemeManager.cs
+ create mode 100644 TeleDrive.WPF/TrayIconManager.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/FilesPageViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/MainViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/SettingsPageViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/TransfersPageViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/Wizard/BotApiSetupPageViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/Wizard/ChooseModePageViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/Wizard/DonePageViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/Wizard/MtProtoSetupPageViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/Wizard/StoragePageViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/Wizard/WelcomePageViewModel.cs
+ create mode 100644 TeleDrive.WPF/ViewModels/Wizard/WizardViewModel.cs
+ create mode 100644 TeleDrive.WPF/Views/MainWindow.xaml
+ create mode 100644 TeleDrive.WPF/Views/MainWindow.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Pages/FilesPage.xaml
+ create mode 100644 TeleDrive.WPF/Views/Pages/FilesPage.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Pages/SettingsPage.xaml
+ create mode 100644 TeleDrive.WPF/Views/Pages/SettingsPage.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Pages/TransfersPage.xaml
+ create mode 100644 TeleDrive.WPF/Views/Pages/TransfersPage.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/BotApiSetupPage.xaml
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/BotApiSetupPage.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/ChooseModePage.xaml
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/ChooseModePage.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/DonePage.xaml
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/DonePage.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/MtProtoSetupPage.xaml
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/MtProtoSetupPage.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/StoragePage.xaml
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/StoragePage.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/WelcomePage.xaml
+ create mode 100644 TeleDrive.WPF/Views/Wizard/Pages/WelcomePage.xaml.cs
+ create mode 100644 TeleDrive.WPF/Views/Wizard/WizardWindow.xaml
+ create mode 100644 TeleDrive.WPF/Views/Wizard/WizardWindow.xaml.cs
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/CommunityToolkit.Mvvm.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/Microsoft.Data.Sqlite.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/SQLitePCLRaw.batteries_v2.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/SQLitePCLRaw.core.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/SQLitePCLRaw.provider.e_sqlite3.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.Core.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.Core.pdb
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.Core.xml
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.deps.json
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.exe
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.pdb
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/TeleDrive.WPF.runtimeconfig.json
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/Telegram.Bot.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/WTelegramClient.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-arm/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-arm64/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-armel/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-mips64/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-musl-arm/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-musl-arm64/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-musl-x64/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-ppc64le/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-s390x/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-x64/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/linux-x86/native/libe_sqlite3.so
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/maccatalyst-x64/native/libe_sqlite3.dylib
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/osx-arm64/native/libe_sqlite3.dylib
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/osx-x64/native/libe_sqlite3.dylib
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/win-arm/native/e_sqlite3.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/win-arm64/native/e_sqlite3.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/win-x64/native/e_sqlite3.dll
+ create mode 100644 TeleDrive.WPF/bin/Debug/net8.0-windows/runtimes/win-x86/native/e_sqlite3.dll
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/App.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/App.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Converters/CommonConverters.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/GeneratedInternalTypeHelper.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDriv.6664318D.Up2Date
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.AssemblyInfo.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.AssemblyInfoInputs.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.GeneratedMSBuildEditorConfig.editorconfig
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.GlobalUsings.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.assets.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.csproj.AssemblyReference.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.csproj.CoreCompileInputs.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.csproj.FileListAbsolute.txt
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.dll
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.g.resources
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.genruntimeconfig.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF.pdb
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.AssemblyInfo.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.AssemblyInfoInputs.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.GlobalUsings.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_1blsgcgq_wpftmp.assets.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_MarkupCompile.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_MarkupCompile.lref
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.AssemblyInfo.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.AssemblyInfoInputs.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.GlobalUsings.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_al2o32ac_wpftmp.assets.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.AssemblyInfo.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.AssemblyInfoInputs.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.GlobalUsings.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/TeleDrive.WPF_g5qt23s1_wpftmp.assets.cache
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Themes/Dark.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Themes/Light.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/MainWindow.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/MainWindow.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/FilesPage.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/FilesPage.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/SettingsPage.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/SettingsPage.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/TransfersPage.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Pages/TransfersPage.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/BotApiSetupPage.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/BotApiSetupPage.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/ChooseModePage.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/ChooseModePage.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/DonePage.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/DonePage.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/MtProtoSetupPage.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/MtProtoSetupPage.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/StoragePage.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/StoragePage.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/WelcomePage.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/Pages/WelcomePage.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/WizardWindow.baml
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/Views/Wizard/WizardWindow.g.cs
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/apphost.exe
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/ref/TeleDrive.WPF.dll
+ create mode 100644 TeleDrive.WPF/obj/Debug/net8.0-windows/refint/TeleDrive.WPF.dll
+ create mode 100644 TeleDrive.WPF/obj/TeleDrive.WPF.csproj.nuget.dgspec.json
+ create mode 100644 TeleDrive.WPF/obj/TeleDrive.WPF.csproj.nuget.g.props
+ create mode 100644 TeleDrive.WPF/obj/TeleDrive.WPF.csproj.nuget.g.targets
+ create mode 100644 TeleDrive.WPF/obj/TeleDrive.WPF_al2o32ac_wpftmp.csproj.nuget.dgspec.json
+ create mode 100644 TeleDrive.WPF/obj/TeleDrive.WPF_al2o32ac_wpftmp.csproj.nuget.g.props
+ create mode 100644 TeleDrive.WPF/obj/TeleDrive.WPF_al2o32ac_wpftmp.csproj.nuget.g.targets
+ create mode 100644 TeleDrive.WPF/obj/TeleDrive.WPF_g5qt23s1_wpftmp.csproj.nuget.dgspec.json
+ create mode 100644 TeleDrive.WPF/obj/TeleDrive.WPF_g5qt23s1_wpftmp.csproj.nuget.g.props
+ create mode 100644 TeleDrive.WPF/obj/TeleDrive.WPF_g5qt23s1_wpftmp.csproj.nuget.g.targets
+ create mode 100644 TeleDrive.WPF/obj/project.assets.json
+ create mode 100644 TeleDrive.WPF/obj/project.nuget.cache
+ create mode 100644 TeleDrive.sln
+ create mode 100644 build.ps1
+ create mode 100644 logs/build_20260909_094603.log
+ create mode 100644 push_to_github.py
+2026-09-09 09:47:49,161 [DEBUG] stderr: 
+2026-09-09 09:47:49,161 [INFO] Checking for remote changes before pushing.
+2026-09-09 09:47:49,161 [DEBUG] Running: git fetch origin
+2026-09-09 09:47:51,143 [DEBUG] stdout: 
+2026-09-09 09:47:51,143 [DEBUG] stderr: From https://github.com/MoRDekai1364/TeleDrive
+ * [new branch]      main       -> origin/main
+2026-09-09 09:47:51,143 [DEBUG] Running: git rev-parse --verify --quiet origin/main
+2026-09-09 09:47:51,249 [DEBUG] stdout: e72fa7a0cd4addfa063b8de111b7750d0ea3a890
+2026-09-09 09:47:51,249 [DEBUG] stderr: 
+2026-09-09 09:47:51,249 [DEBUG] Running: git rev-parse main
+2026-09-09 09:47:51,342 [DEBUG] stdout: 4010f623356f9abd51306733337c31fa7d2bb6b9
+2026-09-09 09:47:51,342 [DEBUG] stderr: 
+2026-09-09 09:47:51,342 [DEBUG] Running: git rev-parse origin/main
+2026-09-09 09:47:51,458 [DEBUG] stdout: e72fa7a0cd4addfa063b8de111b7750d0ea3a890
+2026-09-09 09:47:51,459 [DEBUG] stderr: 
+2026-09-09 09:47:51,459 [DEBUG] Running: git rev-list --count main..origin/main
+2026-09-09 09:47:51,561 [DEBUG] stdout: 12
+2026-09-09 09:47:51,561 [DEBUG] stderr: 
+2026-09-09 09:47:51,561 [INFO] Remote has 12 commit(s) you don't have locally — rebasing before push.
+2026-09-09 09:47:51,562 [DEBUG] Running: git rebase origin/main
+2026-09-09 09:47:52,757 [DEBUG] stdout: Auto-merging TeleDrive.WPF/TeleDrive.WPF.csproj
+CONFLICT (add/add): Merge conflict in TeleDrive.WPF/TeleDrive.WPF.csproj
+2026-09-09 09:47:52,757 [DEBUG] stderr: Rebasing (1/1)
+error: could not apply 4010f62... fixed bugs in TeleDrive.Core, TeleDrive.WPF and the .csproj
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+Could not apply 4010f62... # fixed bugs in TeleDrive.Core, TeleDrive.WPF and the .csproj
+2026-09-09 09:47:52,757 [DEBUG] Running: git rebase --abort
+2026-09-09 09:47:53,739 [DEBUG] stdout: 
+2026-09-09 09:47:53,740 [DEBUG] stderr: 
+2026-09-09 09:47:53,740 [ERROR] Rebase failed — the remote has changes that conflict with yours. Resolve manually: open a terminal in D:\Programming\Personal_projects_D\TeleDrive\TeleDrive-main and run 'git pull --rebase origin main', fix the conflicts, then re-run this script.

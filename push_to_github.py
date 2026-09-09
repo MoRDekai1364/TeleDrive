@@ -248,13 +248,34 @@ def sync_with_remote(remote_name, branch):
     result = run(["git", "rebase", remote_ref], check=False)
     if result.returncode != 0:
         run(["git", "rebase", "--abort"], check=False)
-        fail(
-            "Rebase failed — the remote has changes that conflict with yours. "
-            f"Resolve manually: open a terminal in {SOURCE_DIR} and run "
-            f"'git pull --rebase {remote_name} {branch}', fix the conflicts, "
-            "then re-run this script."
-        )
+        resolve_conflict_interactively(remote_name, branch, remote_ref)
+        return
     logger.info("Rebased local commits on top of remote changes.")
+
+def merge_unrelated(remote_name, remote_ref, strategy):
+    result = run(["git", "merge", "-X", strategy, remote_ref, "-m",
+                   f"Merge {remote_ref}, prefer {strategy}", "--allow-unrelated-histories"], check=False)
+    if result.returncode != 0:
+        fail(f"Merge with -X {strategy} failed unexpectedly: {result.stderr.strip() or result.stdout.strip()}")
+
+def resolve_conflict_interactively(remote_name, branch, remote_ref):
+    logger.info("Rebase failed — local and remote history conflict (often because the local")
+    logger.info("repo was freshly initialized and shares no commit history with the remote).")
+    logger.info("How should conflicting lines be resolved?")
+    logger.info("  1. Keep MY local version wherever content conflicts")
+    logger.info("  2. Keep the REMOTE version wherever content conflicts")
+    logger.info("  3. Abort — I'll resolve manually in a terminal")
+    choice = input("Select option: ").strip()
+    if choice == "1":
+        merge_unrelated(remote_name, remote_ref, "ours")
+    elif choice == "2":
+        merge_unrelated(remote_name, remote_ref, "theirs")
+    else:
+        fail(
+            "Resolve manually: open a terminal in "
+            f"{SOURCE_DIR} and run 'git pull --rebase {remote_name} {branch}', "
+            "fix the conflicts, then re-run this script."
+        )
 
 def push_with_progress(remote_name, branch):
     cmd = ["git", "push", "-u", remote_name, branch, "--progress"]

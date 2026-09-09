@@ -86,4 +86,14 @@ finally {
     Copy-LogToRepo
 }
 
+if ($exitCode -eq 0) {
+    Write-Host ""
+    Write-Host "DONE." -ForegroundColor Green
+}
+else {
+    Write-Host ""
+    Write-Host "FAILED. See errors above and in the log." -ForegroundColor Red
+}
+
+Read-Host "Press Enter to close"
 exit $exitCode

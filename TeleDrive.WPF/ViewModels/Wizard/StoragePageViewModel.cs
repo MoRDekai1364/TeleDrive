@@ -46,24 +46,29 @@ public partial class StoragePageViewModel : ObservableObject
 
                 _wizard.VaultChannelId = channelId;
                 StatusMessage = "Using existing channel.";
+                IsComplete = true;
+            }
+            else if (_wizard.SelectedMode == Core.Models.ConnectionMode.BotApi)
+            {
+                StatusMessage = "Bot API cannot create Telegram channels. " +
+                    "Pre-create a channel, add the bot as admin, then switch to \"Use existing channel\" and enter its ID.";
             }
             else
             {
-                var telegramService = _wizard.SelectedMode == Core.Models.ConnectionMode.BotApi
-                    ? new BotApiTelegramService(_wizard.BotToken ?? string.Empty)
-                    : null;
+                var mtProtoService = new MtProtoTelegramService(
+                    _wizard.ApiId,
+                    _wizard.ApiHash ?? string.Empty,
+                    field => field == "phone_number" ? _wizard.PhoneNumber : null);
 
-                if (telegramService is null)
-                {
-                    StatusMessage = "MTProto channel auto-creation requires completing sign-in first.";
-                    return;
-                }
+                var channelId = await mtProtoService.CreateChannelAsync(
+                    "TeleDrive Vault",
+                    "TeleDrive vault initialized.",
+                    CancellationToken.None);
 
-                var messageId = await telegramService.SendTextAsync("TeleDrive vault initialized.", 0, CancellationToken.None);
+                _wizard.VaultChannelId = channelId;
                 StatusMessage = "Channel created.";
+                IsComplete = true;
             }
-
-            IsComplete = true;
         }
         catch (Exception ex)
         {
