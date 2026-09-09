@@ -27,6 +27,15 @@ function Write-Progress-Step {
 Write-Log "TeleDrive build starting. Configuration=$Configuration"
 Write-Log "Log file: $logPath"
 
+$sourceLogDir = Join-Path $root "logs"
+$exitCode = 0
+
+function Copy-LogToRepo {
+    New-Item -ItemType Directory -Force -Path $sourceLogDir | Out-Null
+    Copy-Item -Path $logPath -Destination $sourceLogDir -Force
+    Write-Host "Log copied to: $sourceLogDir"
+}
+
 try {
     Write-Progress-Step 5 "Checking dotnet SDK"
     $dotnetVersion = dotnet --version
@@ -38,7 +47,8 @@ try {
     if ($LASTEXITCODE -ne 0) {
         Write-Log "RESTORE FAILED. See log for details."
         $restoreOutput | Select-Object -Last 30 | ForEach-Object { Write-Host $_ }
-        exit 1
+        $exitCode = 1
+        return
     }
     Write-Log "Restore succeeded."
 
@@ -48,7 +58,8 @@ try {
     if ($LASTEXITCODE -ne 0) {
         Write-Log "TeleDrive.Core BUILD FAILED."
         $coreOutput | Select-Object -Last 40 | ForEach-Object { Write-Host $_ }
-        exit 1
+        $exitCode = 1
+        return
     }
     Write-Log "TeleDrive.Core build succeeded."
 
@@ -58,20 +69,21 @@ try {
     if ($LASTEXITCODE -ne 0) {
         Write-Log "TeleDrive.WPF BUILD FAILED."
         $wpfOutput | Select-Object -Last 40 | ForEach-Object { Write-Host $_ }
-        exit 1
+        $exitCode = 1
+        return
     }
     Write-Log "TeleDrive.WPF build succeeded."
 
     Write-Progress-Step 100 "Build complete"
     Write-Log "BUILD SUCCEEDED."
-
-    $sourceLogDir = Join-Path $root "logs"
-    New-Item -ItemType Directory -Force -Path $sourceLogDir | Out-Null
-    Copy-Item -Path $logPath -Destination $sourceLogDir -Force
-    Write-Log "Log copied to: $sourceLogDir"
 }
 catch {
     Write-Log "UNEXPECTED ERROR: $($_.Exception.Message)"
     Write-Log $_.ScriptStackTrace
-    exit 1
+    $exitCode = 1
 }
+finally {
+    Copy-LogToRepo
+}
+
+exit $exitCode

@@ -155,7 +155,7 @@ public class MtProtoTelegramService : ITelegramService, IDisposable
         return new InputChannel(channelId, resolved);
     }
 
-    private static long ExtractMessageId(Updates_Base update)
+    private static long ExtractMessageId(UpdatesBase update)
     {
         var messageUpdate = update.UpdateList
             .OfType<UpdateNewMessage>()
