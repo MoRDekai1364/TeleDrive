@@ -18,7 +18,7 @@ public class BotApiTelegramService : ITelegramService
 
     public async Task<long> UploadFileAsync(string filePath, long channelId, IProgress<long>? progress, CancellationToken cancellationToken)
     {
-        await using var stream = File.OpenRead(filePath);
+        await using var stream = System.IO.File.OpenRead(filePath);
         var fileName = Path.GetFileName(filePath);
 
         var message = await _client.SendDocument(
@@ -48,7 +48,7 @@ public class BotApiTelegramService : ITelegramService
             Directory.CreateDirectory(directory);
         }
 
-        await using var destinationStream = File.Create(destinationPath);
+        await using var destinationStream = System.IO.File.Create(destinationPath);
         await _client.DownloadFile(file, destinationStream, cancellationToken);
 
         await _client.DeleteMessage(channelId, message.MessageId, cancellationToken);

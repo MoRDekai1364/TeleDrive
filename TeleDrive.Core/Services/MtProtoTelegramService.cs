@@ -59,7 +59,7 @@ public class MtProtoTelegramService : ITelegramService, IDisposable
             attributes = new DocumentAttribute[] { new DocumentAttributeFilename { file_name = fileName } }
         };
 
-        var update = await _client.Messages_SendMedia(peer, media, string.Empty, Helpers.RandomLong());
+        var update = await _client.Messages_SendMedia(peer, media, string.Empty, WTelegram.Helpers.RandomLong());
         var messageId = ExtractMessageId(update);
 
         return messageId;
@@ -84,7 +84,7 @@ public class MtProtoTelegramService : ITelegramService, IDisposable
         }
 
         await using var destinationStream = File.Create(destinationPath);
-        await _client.DownloadFileAsync(document, destinationStream, progress is null
+        await _client.DownloadFileAsync(document, destinationStream, progress: progress is null
             ? null
             : (transmitted, total) => progress.Report(transmitted));
     }
@@ -102,7 +102,7 @@ public class MtProtoTelegramService : ITelegramService, IDisposable
         await EnsureLoggedInAsync();
 
         var peer = await ResolveChannelAsync(channelId);
-        var update = await _client.Messages_SendMessage(peer, text, Helpers.RandomLong());
+        var update = await _client.Messages_SendMessage(peer, text, WTelegram.Helpers.RandomLong());
         return ExtractMessageId(update);
     }
 
@@ -129,12 +129,12 @@ public class MtProtoTelegramService : ITelegramService, IDisposable
         var peer = await ResolveChannelAsync(channelId);
         var fullChat = await _client.Channels_GetFullChannel(peer);
 
-        if (fullChat.full_chat.pinned_msg_id == 0)
+        if (fullChat.full_chat is not ChannelFull channelFull || channelFull.pinned_msg_id == 0)
         {
             return null;
         }
 
-        var messages = await _client.Channels_GetMessages(peer, new InputMessage[] { fullChat.full_chat.pinned_msg_id });
+        var messages = await _client.Channels_GetMessages(peer, new InputMessage[] { channelFull.pinned_msg_id });
 
         if (messages.Messages.FirstOrDefault() is TL.Message message)
         {
@@ -149,10 +149,31 @@ public class MtProtoTelegramService : ITelegramService, IDisposable
         _user ??= await _client.LoginUserIfNeeded();
     }
 
+    private readonly Dictionary<long, long> _channelAccessHashes = new();
+
     private async Task<InputChannel> ResolveChannelAsync(long channelId)
     {
-        var resolved = await _client.GetAccessHashFor<Channel>(channelId);
-        return new InputChannel(channelId, resolved);
+        if (_channelAccessHashes.TryGetValue(channelId, out var accessHash))
+        {
+            return new InputChannel(channelId, accessHash);
+        }
+
+        var dialogs = await _client.Messages_GetAllDialogs();
+        foreach (var chat in dialogs.chats.Values)
+        {
+            if (chat is Channel channel)
+            {
+                _channelAccessHashes[channel.id] = channel.access_hash;
+            }
+        }
+
+        if (_channelAccessHashes.TryGetValue(channelId, out accessHash))
+        {
+            return new InputChannel(channelId, accessHash);
+        }
+
+        throw new InvalidOperationException(
+            $"Unable to resolve access hash for channel {channelId}. Ensure this account is a member of the vault channel.");
     }
 
     private static long ExtractMessageId(UpdatesBase update)
