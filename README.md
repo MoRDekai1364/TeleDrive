@@ -21,6 +21,8 @@ TeleDrive turns your Telegram account or bot into a private cloud drive. Files a
 - **Themes** — Dark, Light, System (default)
 - **Local cache** — SQLite mirror of the index for instant browse without hitting Telegram
 - **Resumable transfers** — Failed chunk uploads retry independently; interrupted sessions resume
+- **Game Library Mode** — integrated sidebar view: game library grid (cover, wall, hrs played), per-game save-data backup/restore, auto-detects Steam/Epic/GOG installs
+- **Drive Backup Mode** — integrated sidebar view: full C: drive scan with include/exclude, backs up everything that can be backed up, restorable from another Windows 11 machine running TeleDrive
 - **Future: Android and iOS** — Core logic is platform-agnostic; mobile ports share the same library
 
 ---
@@ -48,17 +50,21 @@ TeleDrive/
 │   ├── Interfaces/
 │   │   ├── ITelegramService.cs          # Upload, download, delete, test connection
 │   │   ├── IChunkingService.cs          # Split, reassemble, hash
-│   │   └── IIndexService.cs             # Read/write file index from Telegram
+│   │   ├── IIndexService.cs             # Read/write file index from Telegram
+│   │   └── IArchiveService.cs           # Zip a folder into a stream for chunked upload
 │   ├── Models/
 │   │   ├── VaultFile.cs                 # A file entry in the index
 │   │   ├── FileChunk.cs                 # One chunk of a split file
 │   │   ├── TransferItem.cs              # A live upload or download operation
 │   │   ├── AppSettings.cs               # Persisted user settings
-│   │   └── ConnectionMode.cs            # BotApi | MtProto enum
+│   │   ├── ConnectionMode.cs            # BotApi | MtProto enum
+│   │   ├── BackupSet.cs                 # A folder/drive backup snapshot
+│   │   └── ArchiveEntry.cs              # One file within a BackupSet, with relative path
 │   ├── Services/
 │   │   ├── BotApiTelegramService.cs     # ITelegramService via Telegram.Bot
 │   │   ├── MtProtoTelegramService.cs    # ITelegramService via WTelegramClient
 │   │   ├── ChunkingService.cs           # Memory-mapped chunking + SHA-256
+│   │   ├── ArchiveService.cs            # Zip-on-select folder archiving (IArchiveService)
 │   │   ├── IndexService.cs              # Read/write JSON index in Telegram channel
 │   │   └── TransferOrchestrator.cs      # Bounded work queue + worker pool
 │   └── Helpers/
@@ -85,6 +91,8 @@ TeleDrive/
     │   └── Pages/
     │       ├── FilesPage.xaml           # Explorer-style file browser
     │       ├── TransfersPage.xaml       # Active/completed transfers
+    │       ├── GameModePage.xaml        # Game library grid, per-game backup/restore
+    │       ├── DriveBackupPage.xaml     # Full C: drive scan, include/exclude, backup/restore
     │       └── SettingsPage.xaml        # Theme, transfer limit, cache
     ├── ViewModels/
     │   ├── Wizard/
@@ -98,6 +106,8 @@ TeleDrive/
     │   ├── MainViewModel.cs
     │   ├── FilesPageViewModel.cs
     │   ├── TransfersPageViewModel.cs
+    │   ├── GameModePageViewModel.cs
+    │   ├── DriveBackupPageViewModel.cs
     │   └── SettingsPageViewModel.cs
     └── Converters/
         └── CommonConverters.xaml
@@ -192,6 +202,21 @@ Production-quality hardening before any mobile work begins.
 - Right-click context menu: Download, Delete, Copy Link, Properties
 - Keyboard shortcuts: Ctrl+U (upload), Ctrl+F (search), Delete (delete selected)
 - Crash reporting to a local log file (`%AppData%\TeleDrive\logs\`)
+
+---
+
+### Phase 9 — Game Mode & Drive Backup Mode
+Add two new integrated sidebar views (not separate apps) sharing Core's Telegram/chunking/index plumbing.
+
+**Deliverables:**
+- `BackupSet.cs` / `ArchiveEntry.cs` (Core/Models) — a folder/drive backup snapshot and its per-file relative-path entries, kept separate from `VaultFile` so the existing single-file flow is untouched
+- `IArchiveService.cs` / `ArchiveService.cs` — zips a selected folder (streamed) into the existing chunking pipeline on select, and reassembles + unzips on restore
+- `GameModePage.xaml` / `GameModePageViewModel.cs` — library grid (cover, wall, hrs played), auto-detects Steam/Epic/GOG installs, per-game backup (save/user-data folder only) and restore
+- `DriveBackupPage.xaml` / `DriveBackupPageViewModel.cs` — full C: scan (via integrated disk-analyzer logic), include/exclude picker, backs up to a `BackupSet`, restorable from another Windows 11 machine running TeleDrive
+- `AppSettings.GameModeTelemetryLevel` (`Simple` | `Advanced` enum) — Simple tracks session length/launch count/last played; Advanced adds FPS/frame-time capture. Default `Simple`, changeable in `SettingsPage`
+- `MainWindow`/`MainViewModel` gain Game Mode and Drive Backup nav entries, following the existing sidebar + `DataTemplate`-switched content pattern
+
+⚠️ Not yet started — planning only. Disk-analyzer scan logic to be pulled from a companion repo once its source is available.
 
 ---
 
